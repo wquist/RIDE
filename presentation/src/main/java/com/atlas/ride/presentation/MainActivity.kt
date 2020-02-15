@@ -1,4 +1,4 @@
-package com.atlas.ride
+package com.atlas.ride.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
