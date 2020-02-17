@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:theme="@style/App.ThemeOverlay.Signup">
 
     <com.google.android.material.textfield.TextInputLayout
         android:hint="@string/authorize_username"
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
         android:layout_marginTop="@dimen/authorize_form_margin"
-        style="@style/MainTheme.Widget.TextInputLayout">
+        style="@style/App.Widget.TextInputLayout">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signup_email_text"
             android:inputType="textEmailAddress|text"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
         android:layout_marginTop="@dimen/authorize_field_margin"
-        style="@style/MainTheme.Widget.TextInputLayout">
+        style="@style/App.Widget.TextInputLayout">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signup_password_text"
             android:inputType="textPassword"
@@ -42,8 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
         android:layout_marginTop="@dimen/authorize_button_margin"
-        style="@style/MainTheme.Widget.Button.Dark" />
+        style="@style/App.Widget.Button.Dark" />
 
-    <include layout="@layout/content_oauth" />
+    <include layout="@layout/content_sso" />
 
 </LinearLayout>

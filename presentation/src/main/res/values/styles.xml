@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="MainTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="App" />
+
+    <style name="App.Theme.Base" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="android:windowBackground">@color/white</item>
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryDark">@color/blue_dark</item>
@@ -8,41 +10,54 @@
         <item name="android:windowActionBar">false</item>
         <item name="android:fontFamily">Roboto</item>
 
-        <item name="android:buttonStyle">@style/MainTheme.Widget.Button</item>
+        <item name="android:buttonStyle">@style/App.Widget.Button</item>
 
-        <item name="android:textAppearanceLargePopupMenu">@style/MainTheme.TextAppearance.Button</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/App.TextAppearance.Button</item>
         <item name="android:listPreferredItemHeightSmall">@dimen/all_menu_height</item>
     </style>
 
-    <style name="MainTheme.Overlay" />
+    <style name="App.Theme.Main" parent="App.Theme.Base" />
+    <style name="App.ThemeOverlay" parent="App.Theme.Main" />
 
-    <style name="MainTheme.Overlay.Rule">
+    <style name="App.ThemeOverlay.Login">
+        <item name="sso_facebookAction">@string/login_facebook</item>
+        <item name="sso_googleAction">@string/login_google</item>
+        <item name="sso_twitterAction">@string/login_twitter</item>
+    </style>
+
+    <style name="App.ThemeOverlay.Rule">
         <item name="android:background">@color/gray_light</item>
     </style>
 
-    <style name="MainTheme.TextAppearance" />
+    <style name="App.ThemeOverlay.Signup">
+        <item name="sso_facebookAction">@string/signup_facebook</item>
+        <item name="sso_googleAction">@string/signup_google</item>
+        <item name="sso_twitterAction">@string/signup_twitter</item>
+    </style>
 
-    <style name="MainTheme.TextAppearance.Button">
+    <style name="App.TextAppearance" />
+
+    <style name="App.TextAppearance.Button">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/all_button_text</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="MainTheme.TextAppearance.Hint">
+    <style name="App.TextAppearance.Hint">
         <item name="android:textColor">@color/gray_dark</item>
         <item name="android:textSize">@dimen/all_hint_text</item>
     </style>
 
-    <style name="MainTheme.TextAppearance.Input">
+    <style name="App.TextAppearance.Input">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/all_input_text</item>
     </style>
 
-    <style name="MainTheme.Widget" />
+    <style name="App.Widget" />
 
-    <style name="MainTheme.Widget.Button" parent="Widget.MaterialComponents.Button">
+    <style name="App.Widget.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">?attr/colorPrimary</item>
-        <item name="android:textAppearance">@style/MainTheme.TextAppearance.Button</item>
+        <item name="android:textAppearance">@style/App.TextAppearance.Button</item>
 
         <item name="android:insetLeft">@dimen/all_button_padding</item>
         <item name="android:insetRight">@dimen/all_button_padding</item>
@@ -52,36 +67,36 @@
         <item name="cornerRadius">@dimen/all_corner_size</item>
     </style>
 
-    <style name="MainTheme.Widget.Button.Dark">
+    <style name="App.Widget.Button.Dark">
         <item name="android:backgroundTint">?attr/colorPrimaryDark</item>
     </style>
 
-    <style name="MainTheme.Widget.Button.Icon">
+    <style name="App.Widget.Button.Icon">
         <item name="iconSize">@dimen/all_icon_size</item>
         <item name="iconPadding">@dimen/all_icon_padding</item>
     </style>
 
-    <style name="MainTheme.Widget.Button.Icon.Facebook">
+    <style name="App.Widget.Button.Icon.Facebook">
         <item name="android:backgroundTint">@color/facebook</item>
 
         <item name="icon">@drawable/ic_facebook</item>
     </style>
 
-    <style name="MainTheme.Widget.Button.Icon.Google">
+    <style name="App.Widget.Button.Icon.Google">
         <item name="android:backgroundTint">@color/google</item>
 
         <item name="icon">@drawable/ic_google</item>
     </style>
 
-    <style name="MainTheme.Widget.Button.Icon.Twitter">
+    <style name="App.Widget.Button.Icon.Twitter">
         <item name="android:backgroundTint">@color/twitter</item>
 
         <item name="icon">@drawable/ic_twitter</item>
     </style>
 
-    <style name="MainTheme.Widget.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <style name="App.Widget.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:colorControlHighlight">?attr/colorPrimaryDark</item>
-        <item name="android:textAppearance">@style/MainTheme.TextAppearance.Input</item>
+        <item name="android:textAppearance">@style/App.TextAppearance.Input</item>
 
         <item name="android:paddingVertical">@dimen/authorize_field_padding</item>
 

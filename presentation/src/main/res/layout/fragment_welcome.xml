@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
-        style="@style/MainTheme.Widget.Button.Dark" />
+        style="@style/App.Widget.Button.Dark" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/welcome_login_button"
@@ -31,6 +31,6 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
         android:layout_marginTop="@dimen/welcome_button_margin"
-        style="@style/MainTheme.Widget.Button.Dark" />
+        style="@style/App.Widget.Button.Dark" />
 
 </LinearLayout>

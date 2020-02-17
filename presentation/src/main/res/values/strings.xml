@@ -5,9 +5,15 @@
 
     <string name="authorize_username">Username or Email</string>
     <string name="authorize_password">Password</string>
+    <string name="login_facebook">Login with Facebook</string>
+    <string name="login_google">Login with Google</string>
     <string name="login_server">Login</string>
+    <string name="login_twitter">Login with Twitter</string>
     <string name="login_title">Login</string>
+    <string name="signup_facebook">Sign Up with Facebook</string>
+    <string name="signup_google">Sign Up with Google</string>
     <string name="signup_server">Sign Up</string>
+    <string name="signup_twitter">Sign Up with Twitter</string>
     <string name="signup_title">Sign Up</string>
 
     <string name="welcome_splash">RIDE: The IoT Wave</string>
