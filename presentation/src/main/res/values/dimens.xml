@@ -4,13 +4,21 @@
     <dimen name="all_button_text">16sp</dimen>
     <dimen name="all_corner_size">2dp</dimen>
     <dimen name="all_edge_margin">16dp</dimen>
+    <dimen name="all_hint_text">14sp</dimen>
     <dimen name="all_icon_padding">-20dp</dimen>
     <dimen name="all_icon_size">20dp</dimen>
     <dimen name="all_input_text">18sp</dimen>
     <dimen name="all_menu_height">40dp</dimen>
+    <dimen name="all_rule_height">1dp</dimen>
+
+    <dimen name="authorize_button_margin">32dp</dimen>
+    <dimen name="authorize_field_margin">12dp</dimen>
+    <dimen name="authorize_field_padding">8dp</dimen>
+    <dimen name="authorize_form_margin">28dp</dimen>
+
+    <dimen name="oauth_button_margin">14dp</dimen>
+    <dimen name="oauth_rule_margin">36dp</dimen>
 
     <dimen name="welcome_button_margin">22dp</dimen>
     <dimen name="welcome_splash_margin">50dp</dimen>
-
-    <dimen name="authorize_form_margin">28dp</dimen>
 </resources>

@@ -17,29 +17,34 @@ class MainActivity : AppCompatActivity() {
         findNavController(R.id.main_content_fragment)
     }
     private val configuration: AppBarConfiguration by lazy {
-        AppBarConfiguration(setOf(), main_drawer_layout)
+        AppBarConfiguration(main_drawer_view.menu, main_drawer_layout)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setSupportActionBar(main_content_toolbar)
         setupActionBarWithNavController(controller, configuration)
+        // The initial fragment destination is not part of the drawer menu, so neither the hamburger
+        // or the back arrow should be displayed.
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         main_drawer_view.setupWithNavController(controller)
         main_drawer_view.setNavigationItemSelectedListener {
             main_drawer_layout.closeDrawer(GravityCompat.START)
             true
         }
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-//        if (controller.currentDestination?.id == controller.graph.startDestination)
-//            supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        val result = controller.navigateUp(configuration) || super.onSupportNavigateUp()
 
-        return (controller.navigateUp(configuration) || super.onSupportNavigateUp())
+        // Like in [onCreate], the initial fragment must be handled specially (no navigation
+        // button). Note that this must occur after the controller has navigated, such that
+        // [currentDesination] will point to the correct view ID.
+        if (controller.currentDestination?.id == controller.graph.startDestination)
+            supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+        return result
     }
 }

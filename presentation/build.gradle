@@ -3,6 +3,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
 android {
     def all = rootProject.extensions.getByName('ext')
     compileSdkVersion all['compileSdkVersion']
@@ -32,8 +34,6 @@ android {
 }
 
 dependencies {
-    def navigation_version = '2.2.1'
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 

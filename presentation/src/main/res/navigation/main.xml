@@ -10,6 +10,16 @@
         android:id="@+id/welcome_fragment"
         android:name="com.atlas.ride.presentation.feature.welcome.WelcomeFragment"
         android:label="@string/welcome_title"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/welcome_to_signup_action"
+            app:destination="@id/signup_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signup_fragment"
+        android:name="com.atlas.ride.presentation.feature.authorize.SignupFragment"
+        android:label="@string/signup_title"
+        tools:layout="@layout/fragment_signup" />
 
 </navigation>

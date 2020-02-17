@@ -6,6 +6,10 @@
     <color name="blue">#015090</color>
     <color name="blue_dark">#034275</color>
 
+    <color name="gray">#8492A6</color>
+    <color name="gray_dark">#47525E</color>
+    <color name="gray_light">#C0CCDA</color>
+
     <color name="facebook">#3B5998</color>
     <color name="twitter">#00ACED</color>
     <color name="google">#4285F4</color>
