@@ -21,6 +21,8 @@ allprojects {
     }
 
     ext {
+        jvmTarget = '1.8'
+
         compileSdkVersion = 29
         buildToolsVersion = '29.0.2'
 

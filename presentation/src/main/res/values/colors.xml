@@ -5,4 +5,8 @@
 
     <color name="blue">#015090</color>
     <color name="blue_dark">#034275</color>
+
+    <color name="facebook">#3B5998</color>
+    <color name="twitter">#00ACED</color>
+    <color name="google">#4285F4</color>
 </resources>

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="all_button_padding">4dp</dimen>
     <dimen name="all_button_text">16sp</dimen>
+    <dimen name="all_corner_size">2dp</dimen>
+    <dimen name="all_edge_margin">16dp</dimen>
+    <dimen name="all_icon_padding">-20dp</dimen>
+    <dimen name="all_icon_size">20dp</dimen>
+    <dimen name="all_input_text">18sp</dimen>
     <dimen name="all_menu_height">40dp</dimen>
+
+    <dimen name="welcome_button_margin">22dp</dimen>
+    <dimen name="welcome_splash_margin">50dp</dimen>
+
+    <dimen name="authorize_form_margin">28dp</dimen>
 </resources>

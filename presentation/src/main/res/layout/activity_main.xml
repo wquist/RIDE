@@ -9,22 +9,23 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/main_content_toolbar"
             android:theme="@style/MainTheme.Overlay.ActionBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <androidx.fragment.app.FragmentContainerView
+        <fragment
             android:id="@+id/main_content_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             app:navGraph="@navigation/main"
-            app:defaultNavHost="true" />
+            app:defaultNavHost="true"
+            tools:ignore="FragmentTagUsage" />
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
