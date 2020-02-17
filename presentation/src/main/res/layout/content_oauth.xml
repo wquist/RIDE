@@ -21,7 +21,7 @@
             style="@style/MainTheme.Overlay.Rule" />
         <TextView
             android:text="OR"
-            android:textAppearance="@style/MainTheme.Text.Hint"
+            android:textAppearance="@style/MainTheme.TextAppearance.Hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <View
@@ -37,7 +37,6 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/oauth_facebook_button"
         android:text="FACEBOOK"
-        android:textAppearance="@style/MainTheme.Text.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
@@ -46,7 +45,6 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/oauth_twitter_button"
         android:text="TWITTER"
-        android:textAppearance="@style/MainTheme.Text.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
@@ -56,7 +54,6 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/oauth_google_button"
         android:text="GOOGLE"
-        android:textAppearance="@style/MainTheme.Text.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"

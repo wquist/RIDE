@@ -19,7 +19,6 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/welcome_signup_button"
         android:text="@string/all_signup"
-        android:textAppearance="@style/MainTheme.Text.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
@@ -28,7 +27,6 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/welcome_login_button"
         android:text="@string/all_login"
-        android:textAppearance="@style/MainTheme.Text.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"

@@ -15,7 +15,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signup_email_text"
             android:inputType="textEmailAddress|text"
-            android:textAppearance="@style/MainTheme.Text.Input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="0dp" />
@@ -31,7 +30,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signup_password_text"
             android:inputType="textPassword"
-            android:textAppearance="@style/MainTheme.Text.Input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="0dp" />
@@ -40,11 +38,12 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signup_server_button"
         android:text="@string/signup_server"
-        android:textAppearance="@style/MainTheme.Text.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
         android:layout_marginTop="@dimen/authorize_button_margin"
         style="@style/MainTheme.Widget.Button.Dark" />
+
+    <include layout="@layout/content_oauth" />
 
 </LinearLayout>
