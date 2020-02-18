@@ -22,5 +22,8 @@ class WelcomeFragment : Fragment() {
         welcome_signup_button.setOnClickListener {
             findNavController().navigate(WelcomeFragmentDirections.welcomeToSignupAction())
         }
+        welcome_login_button.setOnClickListener {
+            findNavController().navigate(WelcomeFragmentDirections.welcomeToLoginAction())
+        }
     }
 }

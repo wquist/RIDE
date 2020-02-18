@@ -14,6 +14,9 @@
         <action
             android:id="@+id/welcome_to_signup_action"
             app:destination="@id/signup_fragment" />
+        <action
+            android:id="@+id/welcome_to_login_action"
+            app:destination="@id/login_fragment" />
     </fragment>
 
     <fragment
@@ -21,5 +24,11 @@
         android:name="com.atlas.ride.presentation.feature.authorize.SignupFragment"
         android:label="@string/signup_title"
         tools:layout="@layout/fragment_signup" />
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.atlas.ride.presentation.feature.authorize.LoginFragment"
+        android:label="@string/login_title"
+        tools:layout="@layout/fragment_login" />
 
 </navigation>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/App.ThemeOverlay.Login">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:hint="@string/authorize_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/all_edge_margin"
+        android:layout_marginTop="@dimen/authorize_form_margin"
+        style="@style/App.Widget.TextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email_text"
+            android:inputType="textEmailAddress|text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:hint="@string/authorize_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/all_edge_margin"
+        android:layout_marginTop="@dimen/authorize_field_margin"
+        style="@style/App.Widget.TextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password_text"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_server_button"
+        android:text="@string/login_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/all_edge_margin"
+        android:layout_marginTop="@dimen/authorize_button_margin"
+        style="@style/App.Widget.Button" />
+
+    <include layout="@layout/content_sso" />
+
+</LinearLayout>
