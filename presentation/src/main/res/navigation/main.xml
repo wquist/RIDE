@@ -7,27 +7,22 @@
     app:startDestination="@id/welcome_fragment">
 
     <fragment
-        android:id="@+id/welcome_fragment"
-        android:name="com.atlas.ride.presentation.feature.welcome.WelcomeFragment"
-        android:label="@string/welcome_title"
-        tools:layout="@layout/fragment_welcome">
-        <action
-            android:id="@+id/welcome_to_signup_action"
-            app:destination="@id/signup_fragment" />
-        <action
-            android:id="@+id/welcome_to_login_action"
-            app:destination="@id/login_fragment" />
-    </fragment>
+        android:id="@+id/about_fragment"
+        android:name="com.atlas.ride.presentation.feature.settings.AboutFragment"
+        android:label="@string/about_title"
+        tools:layout="@layout/fragment_about" />
 
     <fragment
-        android:id="@+id/signup_fragment"
-        android:name="com.atlas.ride.presentation.feature.login.SignupFragment"
-        android:label="@string/signup_title"
-        tools:layout="@layout/fragment_signup">
-        <action
-            android:id="@+id/signup_to_editor_action"
-            app:destination="@id/editor_fragment" />
-    </fragment>
+        android:id="@+id/build_fragment"
+        android:name="com.atlas.ride.presentation.feature.build.BuildFragment"
+        android:label="@string/build_title"
+        tools:layout="@layout/fragment_build" />
+
+    <fragment
+        android:id="@+id/editor_fragment"
+        android:name="com.atlas.ride.presentation.feature.editor.EditorFragment"
+        android:label="@string/editor_title"
+        tools:layout="@layout/fragment_editor" />
 
     <fragment
         android:id="@+id/login_fragment"
@@ -46,22 +41,10 @@
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
-        android:id="@+id/editor_fragment"
-        android:name="com.atlas.ride.presentation.feature.editor.EditorFragment"
-        android:label="@string/editor_title"
-        tools:layout="@layout/fragment_editor" />
-
-    <fragment
-        android:id="@+id/toolbox_fragment"
-        android:name="com.atlas.ride.presentation.feature.editor.ToolboxFragment"
-        android:label="@string/toolbox_title"
-        tools:layout="@layout/fragment_toolbox" />
-
-    <fragment
-        android:id="@+id/things_fragment"
-        android:name="com.atlas.ride.presentation.feature.list.ThingsFragment"
-        android:label="@string/things_title"
-        tools:layout="@layout/fragment_things" />
+        android:id="@+id/recipes_fragment"
+        android:name="com.atlas.ride.presentation.feature.list.RecipesFragment"
+        android:label="@string/recipes_title"
+        tools:layout="@layout/fragment_recipes" />
 
     <fragment
         android:id="@+id/relationships_fragment"
@@ -70,9 +53,44 @@
         tools:layout="@layout/fragment_relationships" />
 
     <fragment
-        android:id="@+id/recipes_fragment"
-        android:name="com.atlas.ride.presentation.feature.list.RecipesFragment"
-        android:label="@string/recipes_title"
-        tools:layout="@layout/fragment_recipes" />
+        android:id="@+id/settings_fragment"
+        android:name="com.atlas.ride.presentation.feature.settings.SettingsFragment"
+        android:label="@string/settings_title"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/signup_fragment"
+        android:name="com.atlas.ride.presentation.feature.login.SignupFragment"
+        android:label="@string/signup_title"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/signup_to_editor_action"
+            app:destination="@id/editor_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/things_fragment"
+        android:name="com.atlas.ride.presentation.feature.list.ThingsFragment"
+        android:label="@string/things_title"
+        tools:layout="@layout/fragment_things" />
+
+    <fragment
+        android:id="@+id/toolbox_fragment"
+        android:name="com.atlas.ride.presentation.feature.editor.ToolboxFragment"
+        android:label="@string/toolbox_title"
+        tools:layout="@layout/fragment_toolbox" />
+
+    <fragment
+        android:id="@+id/welcome_fragment"
+        android:name="com.atlas.ride.presentation.feature.welcome.WelcomeFragment"
+        android:label="@string/welcome_title"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/welcome_to_signup_action"
+            app:destination="@id/signup_fragment" />
+        <action
+            android:id="@+id/welcome_to_login_action"
+            app:destination="@id/login_fragment" />
+    </fragment>
 
 </navigation>

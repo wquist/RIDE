@@ -11,6 +11,7 @@
 
         <item name="android:textAppearanceLargePopupMenu">@style/App.TextAppearance.PopupMenu</item>
         <item name="android:listPreferredItemHeightSmall">@dimen/all_menu_height</item>
+        <item name="android:listDivider">@color/gray_light</item>
     </style>
 
     <style name="App.Theme.Main" parent="App.Theme.Base" />

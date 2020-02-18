@@ -31,8 +31,20 @@
             android:id="@id/recipes_fragment"
             android:title="@string/recipes_title"
             android:icon="@drawable/ic_recipe" />
+        <item
+            android:id="@id/build_fragment"
+            android:title="@string/build_title"
+            android:icon="@drawable/ic_build" />
     </group>
 
     <group android:id="@+id/drawer_settings_group">
+        <item
+            android:id="@id/settings_fragment"
+            android:title="@string/settings_title"
+            android:icon="@drawable/ic_settings" />
+        <item
+            android:id="@id/about_fragment"
+            android:title="@string/about_title"
+            android:icon="@drawable/ic_about" />
     </group>
 </menu>
