@@ -15,7 +15,6 @@
     <dimen name="authorize_button_margin">32dp</dimen>
     <dimen name="authorize_field_margin">12dp</dimen>
     <dimen name="authorize_field_padding">8dp</dimen>
-    <dimen name="authorize_form_margin">28dp</dimen>
 
     <dimen name="sso_button_margin">14dp</dimen>
     <dimen name="sso_rule_margin">36dp</dimen>

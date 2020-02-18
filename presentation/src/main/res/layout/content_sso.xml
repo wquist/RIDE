@@ -16,7 +16,7 @@
             android:layout_weight="0.5"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="@dimen/all_rule_height"
-            android:layout_marginHorizontal="@dimen/all_edge_margin"
+            android:layout_marginEnd="@dimen/all_edge_margin"
             style="@style/App.ThemeOverlay.Rule" />
         <TextView
             android:text="OR"
@@ -29,7 +29,7 @@
             android:layout_weight="0.5"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="@dimen/all_rule_height"
-            android:layout_marginHorizontal="@dimen/all_edge_margin"
+            android:layout_marginStart="@dimen/all_edge_margin"
             style="@style/App.ThemeOverlay.Rule" />
     </LinearLayout>
 
@@ -38,7 +38,6 @@
         android:text="?attr/sso_facebookAction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/all_edge_margin"
         style="@style/App.Widget.Button.Icon.Facebook" />
 
     <com.google.android.material.button.MaterialButton
@@ -46,7 +45,6 @@
         android:text="?attr/sso_twitterAction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/all_edge_margin"
         android:layout_marginVertical="@dimen/sso_button_margin"
         style="@style/App.Widget.Button.Icon.Twitter" />
 
@@ -55,7 +53,6 @@
         android:text="?attr/sso_googleAction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/all_edge_margin"
         style="@style/App.Widget.Button.Icon.Google" />
 
 </merge>

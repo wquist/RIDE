@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/all_edge_margin"
     android:weightSum="1">
 
     <ImageView
@@ -13,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.55"
-        android:layout_marginHorizontal="@dimen/all_edge_margin"
         android:layout_marginBottom="@dimen/welcome_splash_margin" />
 
     <com.google.android.material.button.MaterialButton
@@ -21,7 +21,6 @@
         android:text="@string/all_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/all_edge_margin"
         style="@style/App.Widget.Button.Dark" />
 
     <com.google.android.material.button.MaterialButton
@@ -29,7 +28,6 @@
         android:text="@string/all_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/all_edge_margin"
         android:layout_marginTop="@dimen/welcome_button_margin"
         style="@style/App.Widget.Button.Dark" />
 
