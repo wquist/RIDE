@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/ic_grid"
+        android:title="@string/list_toggle"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:icon="@drawable/ic_filter"
+        android:title="@string/list_sort"
+        app:showAsAction="ifRoom">
+        <menu><!-- A primitive-specific sort menu will be inflated here --></menu>
+    </item>
+
+    <item
+        android:icon="@drawable/ic_search"
+        android:title="@string/list_search"
+        app:showAsAction="always" />
+
+</menu>
