@@ -19,7 +19,7 @@
             android:layout_marginEnd="@dimen/all_edge_margin"
             style="@style/App.ThemeOverlay.Rule" />
         <TextView
-            android:text="OR"
+            android:text="@string/sso_hint"
             android:textAppearance="@style/App.TextAppearance.Hint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

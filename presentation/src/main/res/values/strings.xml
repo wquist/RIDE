@@ -45,6 +45,8 @@
     <string name="signup_twitter">Sign Up with Twitter</string>
     <string name="signup_title">Sign Up</string>
 
+    <string name="sso_hint">OR</string>
+
     <string name="things_title">THINGS</string>
     <string name="things_type">Type</string>
 
