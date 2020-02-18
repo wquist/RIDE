@@ -4,14 +4,16 @@
 
     <style name="App.Theme.Base" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="android:windowBackground">@color/white</item>
+        <item name="android:fontFamily">Roboto</item>
+
+        <item name="android:listPreferredItemHeightSmall">@dimen/all_menu_height</item>
+        <item name="android:listDivider">@color/gray_light</item>
+
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryDark">@color/blue_dark</item>
 
-        <item name="android:fontFamily">Roboto</item>
-
-        <item name="android:textAppearanceLargePopupMenu">@style/App.TextAppearance.PopupMenu</item>
-        <item name="android:listPreferredItemHeightSmall">@dimen/all_menu_height</item>
-        <item name="android:listDivider">@color/gray_light</item>
+        <item name="actionOverflowMenuStyle">@style/App.Widget.PopupMenu</item>
+        <item name="textAppearanceLargePopupMenu">@style/App.TextAppearance.PopupMenu</item>
     </style>
 
     <style name="App.Theme.Main" parent="App.Theme.Base" />
@@ -99,6 +101,12 @@
     <style name="App.Widget.NavigationView">
         <item name="itemTextColor">@color/black</item>
         <item name="itemIconTint">@color/black</item>
+    </style>
+
+    <style name="App.Widget.PopupMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:dropDownVerticalOffset">@dimen/all_menu_offset</item>
+
+        <item name="overlapAnchor">false</item>
     </style>
 
     <style name="App.Widget.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">

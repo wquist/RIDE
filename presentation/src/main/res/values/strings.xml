@@ -24,8 +24,11 @@
     <string name="login_twitter">Login with Twitter</string>
     <string name="login_title">Login</string>
 
+    <string name="notifications_device">New Devices</string>
     <string name="notifications_filter">Filter by Type</string>
     <string name="notifications_search">Search by Keyword</string>
+    <string name="notifications_status">Status Updates</string>
+    <string name="notifications_suggestion">Suggestions</string>
     <string name="notifications_title">Notifications</string>
 
     <string name="recipes_title">Recipes</string>
