@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/drawer_notifications_group">
+        <item
+            android:id="@id/notifications_fragment"
+            android:title="@string/notifications_title"
+            android:icon="@drawable/ic_notification" />
     </group>
 
     <group android:id="@+id/drawer_editor_group">
         <item
             android:id="@id/editor_fragment"
             android:title="@string/editor_title"
-            android:icon="@drawable/ic_editor"/>
+            android:icon="@drawable/ic_editor" />
+        <item
+            android:id="@id/toolbox_fragment"
+            android:title="@string/toolbox_title"
+            android:icon="@drawable/ic_toolbox" />
     </group>
 
-    <group android:id="@+id/drawer_build_group">
+    <group android:id="@+id/drawer_inventory_group">
+        <item
+            android:id="@id/things_fragment"
+            android:title="@string/things_title"
+            android:icon="@drawable/ic_thing" />
+        <item
+            android:id="@id/relationships_fragment"
+            android:title="@string/relationships_title"
+            android:icon="@drawable/ic_relationship" />
+        <item
+            android:id="@id/recipes_fragment"
+            android:title="@string/recipes_title"
+            android:icon="@drawable/ic_recipe" />
     </group>
 
     <group android:id="@+id/drawer_settings_group">

@@ -2,7 +2,6 @@ package com.atlas.ride.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -25,15 +24,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupActionBarWithNavController(controller, configuration)
+        main_drawer_view.setupWithNavController(controller)
+
         // The initial fragment destination is not part of the drawer menu, so neither the hamburger
         // or the back arrow should be displayed.
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
-        main_drawer_view.setupWithNavController(controller)
-        main_drawer_view.setNavigationItemSelectedListener {
-            main_drawer_layout.closeDrawer(GravityCompat.START)
-            true
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

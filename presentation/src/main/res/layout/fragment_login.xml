@@ -7,7 +7,7 @@
     android:theme="@style/App.ThemeOverlay.Login">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:hint="@string/authorize_username"
+        android:hint="@string/all_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"
@@ -22,7 +22,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:hint="@string/authorize_password"
+        android:hint="@string/all_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/all_edge_margin"

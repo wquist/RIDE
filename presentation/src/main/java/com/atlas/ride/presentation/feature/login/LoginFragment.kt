@@ -1,4 +1,4 @@
-package com.atlas.ride.presentation.feature.authorize
+package com.atlas.ride.presentation.feature.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
