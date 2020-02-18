@@ -23,12 +23,26 @@
         android:id="@+id/signup_fragment"
         android:name="com.atlas.ride.presentation.feature.authorize.SignupFragment"
         android:label="@string/signup_title"
-        tools:layout="@layout/fragment_signup" />
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/signup_to_editor_action"
+            app:destination="@id/editor_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/login_fragment"
         android:name="com.atlas.ride.presentation.feature.authorize.LoginFragment"
         android:label="@string/login_title"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/login_to_editor_action"
+            app:destination="@id/editor_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editor_fragment"
+        android:name="com.atlas.ride.presentation.feature.editor.EditorFragment"
+        android:label="@string/editor_title"
+        tools:layout="@layout/fragment_editor" />
 
 </navigation>

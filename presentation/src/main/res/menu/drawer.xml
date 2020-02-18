@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/drawer_notifications_group">
+    </group>
 
+    <group android:id="@+id/drawer_editor_group">
+        <item
+            android:id="@id/editor_fragment"
+            android:title="@string/editor_title"
+            android:icon="@drawable/ic_editor"/>
+    </group>
+
+    <group android:id="@+id/drawer_build_group">
+    </group>
+
+    <group android:id="@+id/drawer_settings_group">
+    </group>
 </menu>

@@ -8,7 +8,7 @@
 
     <ImageView
         android:src="@drawable/bg_splash"
-        android:contentDescription="@string/welcome_splash"
+        android:contentDescription="@string/all_splash"
         android:scaleType="fitEnd"
         android:layout_width="match_parent"
         android:layout_height="0dp"
