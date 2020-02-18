@@ -16,6 +16,7 @@
 
     <string name="list_search">Search by Name</string>
     <string name="list_sort">Sort by Field</string>
+    <string name="list_status">Status</string>
     <string name="list_toggle">Toggle Grid View</string>
 
     <string name="login_facebook">Login with Facebook</string>
@@ -33,6 +34,7 @@
 
     <string name="recipes_title">Recipes</string>
 
+    <string name="relationships_connection">Connection</string>
     <string name="relationships_title">Relationships</string>
 
     <string name="settings_title">Settings</string>
@@ -44,6 +46,7 @@
     <string name="signup_title">Sign Up</string>
 
     <string name="things_title">THINGS</string>
+    <string name="things_type">Type</string>
 
     <string name="toolbox_title">Toolbox</string>
 

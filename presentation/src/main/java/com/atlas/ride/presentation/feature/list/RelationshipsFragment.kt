@@ -1,15 +1,18 @@
 package com.atlas.ride.presentation.feature.list
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.view.*
 
 import com.atlas.ride.presentation.R
 
-class RelationshipsFragment : Fragment() {
+class RelationshipsFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, parent: ViewGroup?, state: Bundle?): View? {
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_relationships, parent, false)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        createSortSubMenu(R.menu.sort_relationships, menu, inflater)
     }
 }
