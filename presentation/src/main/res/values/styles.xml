@@ -3,21 +3,26 @@
     <style name="App" />
 
     <style name="App.Theme.Base" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="android:windowBackground">@color/white</item>
         <item name="android:fontFamily">Roboto</item>
+        <item name="android:windowBackground">@color/white</item>
 
-        <item name="android:listPreferredItemHeightSmall">@dimen/all_menu_height</item>
+        <item name="android:listPreferredItemHeightSmall">@dimen/all_drawer_height</item>
         <item name="android:listDivider">@color/gray_light</item>
 
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryDark">@color/blue_dark</item>
 
+        <item name="actionBarTheme">@style/App.ThemeOverlay.ActionBar</item>
         <item name="actionOverflowMenuStyle">@style/App.Widget.PopupMenu</item>
-        <item name="textAppearanceLargePopupMenu">@style/App.TextAppearance.PopupMenu</item>
+        <item name="textAppearanceLargePopupMenu">@style/App.TextAppearance.Menu</item>
     </style>
 
     <style name="App.Theme.Main" parent="App.Theme.Base" />
     <style name="App.ThemeOverlay" parent="App.Theme.Main" />
+
+    <style name="App.ThemeOverlay.ActionBar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:listPreferredItemHeightSmall">@dimen/all_menu_height</item>
+    </style>
 
     <style name="App.ThemeOverlay.Login">
         <item name="sso_facebookAction">@string/login_facebook</item>
@@ -37,7 +42,7 @@
 
     <style name="App.TextAppearance" />
 
-    <style name="App.TextAppearance.Button">
+    <style name="App.TextAppearance.Label">
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/all_button_text</item>
@@ -49,13 +54,15 @@
     </style>
 
     <style name="App.TextAppearance.Input">
+        <item name="android:lineSpacingMultiplier">@dimen/all_input_spacing</item>
+
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/all_input_text</item>
-        <item name="android:lineSpacingMultiplier">@dimen/all_input_spacing</item>
     </style>
 
-    <style name="App.TextAppearance.PopupMenu" parent="TextAppearance.AppCompat.Light.Widget.PopupMenu.Large">
+    <style name="App.TextAppearance.Menu">
         <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/all_menu_text</item>
     </style>
 
     <style name="App.TextAppearance.Section">
@@ -68,7 +75,7 @@
 
     <style name="App.Widget.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">?attr/colorPrimary</item>
-        <item name="android:textAppearance">@style/App.TextAppearance.Button</item>
+        <item name="android:textAppearance">@style/App.TextAppearance.Label</item>
 
         <item name="android:insetLeft">@dimen/all_button_padding</item>
         <item name="android:insetRight">@dimen/all_button_padding</item>
@@ -105,7 +112,7 @@
         <item name="icon">@drawable/ic_twitter</item>
     </style>
 
-    <style name="App.Widget.CheckBox">
+    <style name="App.Widget.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:buttonTint">?attr/colorPrimary</item>
         <item name="android:textColor">@color/gray_dark</item>
         <item name="android:textSize">@dimen/all_input_text</item>
@@ -131,7 +138,7 @@
 
     <style name="App.Widget.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:colorControlHighlight">?attr/colorPrimaryDark</item>
-        <item name="android:paddingVertical">@dimen/all_field_padding</item>
+        <item name="android:paddingVertical">@dimen/all_input_margin</item>
 
         <item name="boxBackgroundColor">@color/white</item>
     </style>

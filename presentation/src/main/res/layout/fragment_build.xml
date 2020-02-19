@@ -54,7 +54,7 @@
             android:checked="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/all_field_padding"
+            android:layout_marginTop="@dimen/all_input_margin"
             style="@style/App.Widget.CheckBox" />
         <com.google.android.material.checkbox.MaterialCheckBox
             android:text="Recipe 2"

@@ -3,16 +3,18 @@
     <dimen name="all_button_padding">4dp</dimen>
     <dimen name="all_button_text">16sp</dimen>
     <dimen name="all_corner_size">2dp</dimen>
+    <dimen name="all_drawer_height">40dp</dimen>
     <dimen name="all_edge_margin">16dp</dimen>
-    <dimen name="all_field_padding">8dp</dimen>
     <dimen name="all_hint_text">14sp</dimen>
     <dimen name="all_icon_padding">-20dp</dimen>
     <dimen name="all_icon_size">20dp</dimen>
+    <dimen name="all_input_margin">8dp</dimen>
     <dimen name="all_input_spacing">1.17</dimen>
     <dimen name="all_input_padding">6dp</dimen>
     <dimen name="all_input_text">18sp</dimen>
-    <dimen name="all_menu_height">40dp</dimen>
-    <dimen name="all_menu_offset">-4dp</dimen>
+    <dimen name="all_menu_height">50dp</dimen>
+    <dimen name="all_menu_offset">-6dp</dimen>
+    <dimen name="all_menu_text">18sp</dimen>
     <dimen name="all_rule_height">1dp</dimen>
     <dimen name="all_section_text">16sp</dimen>
 
