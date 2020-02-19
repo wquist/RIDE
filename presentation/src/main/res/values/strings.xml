@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="all_description">Description</string>
     <string name="all_help">Help</string>
     <string name="all_login">Login</string>
+    <string name="all_name">Name</string>
     <string name="all_password">Password</string>
     <string name="all_signup">Sign Up</string>
     <string name="all_splash">RIDE: The IoT Wave</string>
@@ -9,6 +11,11 @@
 
     <string name="about_title">About</string>
 
+    <string name="build_address">Address</string>
+    <string name="build_configuration">Configuration</string>
+    <string name="build_details">Details</string>
+    <string name="build_generate">Generate</string>
+    <string name="build_recipes">Recipes</string>
     <string name="build_title">Build App</string>
 
     <string name="editor_filter">Filter by Recipe</string>

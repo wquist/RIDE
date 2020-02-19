@@ -11,6 +11,7 @@
 
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryDark">@color/blue_dark</item>
+        <item name="colorOnSurface">@color/gray_dark</item>
 
         <item name="actionBarTheme">@style/App.ThemeOverlay.ActionBar</item>
         <item name="actionOverflowMenuStyle">@style/App.Widget.PopupMenu</item>
@@ -132,14 +133,15 @@
     </style>
 
     <style name="App.Widget.TextInput">
+        <item name="android:paddingTop">@dimen/all_input_leading</item>
         <item name="android:paddingBottom">@dimen/all_input_padding</item>
         <item name="android:textAppearance">@style/App.TextAppearance.Input</item>
     </style>
 
     <style name="App.Widget.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="android:colorControlHighlight">?attr/colorPrimaryDark</item>
-        <item name="android:paddingVertical">@dimen/all_input_margin</item>
+        <item name="android:paddingBottom">@dimen/all_input_margin</item>
 
         <item name="boxBackgroundColor">@color/white</item>
+        <item name="hintTextAppearance">@style/App.TextAppearance.Hint</item>
     </style>
 </resources>
