@@ -1,13 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:text="@string/build_title"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/all_edge_margin">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <TextView
+            android:text="Details"
+            android:textAppearance="@style/App.TextAppearance.Section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/App.Widget.TextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/build_name_text"
+                android:inputType="text"
+                android:textAppearance="@style/App.TextAppearance.Input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/App.Widget.TextInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/App.Widget.TextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/build_description_text"
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/App.Widget.TextInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:text="Recipes"
+            android:textAppearance="@style/App.TextAppearance.Section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/build_section_margin"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:text="Go to Work"
+            android:checked="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/all_field_padding"
+            style="@style/App.Widget.CheckBox" />
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:text="Recipe 2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/App.Widget.CheckBox" />
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:text="Recipe 3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/App.Widget.CheckBox" />
+
+        <TextView
+            android:text="Configuration"
+            android:textAppearance="@style/App.TextAppearance.Section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/build_section_margin"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:hint="Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/App.Widget.TextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/build_address_text"
+                android:inputType="textUri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/App.Widget.TextInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/build_generate_button"
+            android:text="GENERATE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/build_button_margin"
+            style="@style/App.Widget.Button" />
+
+    </LinearLayout>
+</ScrollView>

@@ -38,9 +38,9 @@
     <style name="App.TextAppearance" />
 
     <style name="App.TextAppearance.Button">
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/all_button_text</item>
-        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="App.TextAppearance.Hint">
@@ -51,10 +51,17 @@
     <style name="App.TextAppearance.Input">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/all_input_text</item>
+        <item name="android:lineSpacingMultiplier">@dimen/all_input_spacing</item>
     </style>
 
     <style name="App.TextAppearance.PopupMenu" parent="TextAppearance.AppCompat.Light.Widget.PopupMenu.Large">
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="App.TextAppearance.Section">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">@dimen/all_section_text</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="App.Widget" />
@@ -76,8 +83,8 @@
     </style>
 
     <style name="App.Widget.Button.Icon">
-        <item name="iconSize">@dimen/all_icon_size</item>
         <item name="iconPadding">@dimen/all_icon_padding</item>
+        <item name="iconSize">@dimen/all_icon_size</item>
     </style>
 
     <style name="App.Widget.Button.Icon.Facebook">
@@ -98,9 +105,17 @@
         <item name="icon">@drawable/ic_twitter</item>
     </style>
 
+    <style name="App.Widget.CheckBox">
+        <item name="android:buttonTint">?attr/colorPrimary</item>
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">@dimen/all_input_text</item>
+
+        <item name="android:minHeight">0dp</item>
+    </style>
+
     <style name="App.Widget.NavigationView">
-        <item name="itemTextColor">@color/black</item>
         <item name="itemIconTint">@color/black</item>
+        <item name="itemTextColor">@color/black</item>
     </style>
 
     <style name="App.Widget.PopupMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
@@ -109,11 +124,14 @@
         <item name="overlapAnchor">false</item>
     </style>
 
+    <style name="App.Widget.TextInput">
+        <item name="android:paddingBottom">@dimen/all_input_padding</item>
+        <item name="android:textAppearance">@style/App.TextAppearance.Input</item>
+    </style>
+
     <style name="App.Widget.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="android:colorControlHighlight">?attr/colorPrimaryDark</item>
-        <item name="android:textAppearance">@style/App.TextAppearance.Input</item>
-
-        <item name="android:paddingVertical">@dimen/authorize_field_padding</item>
+        <item name="android:paddingVertical">@dimen/all_field_padding</item>
 
         <item name="boxBackgroundColor">@color/white</item>
     </style>
