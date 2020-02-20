@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/icon_image_layout"
+        android:hint="@string/icon_image"
+        android:labelFor="@id/icon_image_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/icon_preview_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/icon_preview_view"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/App.Widget.DropdownMenuLayout">
+        <AutoCompleteTextView
+            android:id="@+id/icon_image_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/App.Widget.DropdownMenu" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/icon_color_layout"
+        android:hint="@string/icon_color"
+        android:labelFor="@id/icon_color_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/icon_preview_margin"
+        android:layout_marginTop="@dimen/all_input_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/icon_preview_view"
+        app:layout_constraintTop_toBottomOf="@id/icon_image_layout"
+        style="@style/App.Widget.DropdownMenuLayout">
+        <AutoCompleteTextView
+            android:id="@+id/icon_color_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/App.Widget.DropdownMenu" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/icon_preview_view"
+        android:contentDescription="@string/icon_accessibility"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="@dimen/icon_preview_padding"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/icon_preview_text"
+        tools:src="@drawable/bg_icon" />
+
+    <TextView
+        android:id="@+id/icon_preview_text"
+        android:text="@string/icon_preview"
+        android:textAppearance="@style/App.TextAppearance.Hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/icon_preview_view"
+        app:layout_constraintEnd_toEndOf="@id/icon_preview_view"
+        app:layout_constraintBottom_toBottomOf="@id/icon_color_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

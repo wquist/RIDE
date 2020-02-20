@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="all_accessibility">RIDE: The IoT Wave</string>
     <string name="all_description">Description</string>
     <string name="all_help">Help</string>
+    <string name="all_icon">Icon</string>
     <string name="all_login">Login</string>
     <string name="all_name">Name</string>
     <string name="all_password">Password</string>
     <string name="all_signup">Sign Up</string>
-    <string name="all_splash">RIDE: The IoT Wave</string>
     <string name="all_username">Username or Email</string>
 
     <string name="about_title">About</string>
@@ -20,6 +21,11 @@
 
     <string name="editor_filter">Filter by Recipe</string>
     <string name="editor_title">Dynamic Editor</string>
+
+    <string name="icon_accessibility">Use this icon and color</string>
+    <string name="icon_image">Image</string>
+    <string name="icon_color">Color</string>
+    <string name="icon_preview">Preview</string>
 
     <string name="list_search">Search by Name</string>
     <string name="list_sort">Sort by Field</string>

@@ -2,6 +2,7 @@
 <resources>
     <style name="App" />
 
+    <style name="App.Theme.Main" parent="App.Theme.Base" />
     <style name="App.Theme.Base" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="android:fontFamily">Roboto</item>
         <item name="android:windowBackground">@color/white</item>
@@ -18,8 +19,7 @@
         <item name="textAppearanceLargePopupMenu">@style/App.TextAppearance.Menu</item>
     </style>
 
-    <style name="App.Theme.Main" parent="App.Theme.Base" />
-    <style name="App.ThemeOverlay" parent="App.Theme.Main" />
+    <style name="App.ThemeOverlay" />
 
     <style name="App.ThemeOverlay.ActionBar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
         <item name="android:listPreferredItemHeightSmall">@dimen/all_menu_height</item>
@@ -50,7 +50,7 @@
     </style>
 
     <style name="App.TextAppearance.Hint">
-        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">@dimen/all_hint_text</item>
     </style>
 
@@ -121,6 +121,18 @@
         <item name="android:minHeight">0dp</item>
     </style>
 
+    <style name="App.Widget.DropdownMenu">
+        <item name="android:cursorVisible">false</item>
+        <item name="android:focusable">false</item>
+
+        <item name="android:textAppearance">@style/App.TextAppearance.Input</item>
+    </style>
+
+    <style name="App.Widget.DropdownMenuLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="hintTextAppearance">@style/App.TextAppearance.Hint</item>
+    </style>
+
     <style name="App.Widget.NavigationView">
         <item name="itemIconTint">@color/black</item>
         <item name="itemTextColor">@color/black</item>
@@ -135,6 +147,7 @@
     <style name="App.Widget.TextInput">
         <item name="android:paddingTop">@dimen/all_input_leading</item>
         <item name="android:paddingBottom">@dimen/all_input_padding</item>
+
         <item name="android:textAppearance">@style/App.TextAppearance.Input</item>
     </style>
 

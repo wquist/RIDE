@@ -4,12 +4,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/all_edge_margin"
+    android:padding="@dimen/all_edge_padding"
     android:weightSum="1">
 
     <ImageView
         android:src="@drawable/bg_splash"
-        android:contentDescription="@string/all_splash"
+        android:contentDescription="@string/all_accessibility"
         android:scaleType="fitEnd"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -2,12 +2,12 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/all_edge_margin">
+    android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/all_edge_padding">
 
         <TextView
             android:text="@string/build_details"
@@ -86,6 +86,15 @@
                 android:layout_height="wrap_content"
                 style="@style/App.Widget.TextInput" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:text="@string/all_icon"
+            android:textAppearance="@style/App.TextAppearance.Section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/build_section_margin"/>
+
+        <include layout="@layout/content_icon" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/build_generate_button"

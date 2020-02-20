@@ -7,10 +7,10 @@
 
     <ImageView
         android:src="@drawable/bg_splash"
-        android:contentDescription="@string/all_splash"
+        android:contentDescription="@string/all_accessibility"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/all_edge_margin"
+        android:padding="@dimen/all_edge_padding"
         android:adjustViewBounds="true" />
 
     <View

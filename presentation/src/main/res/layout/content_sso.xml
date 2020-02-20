@@ -16,7 +16,7 @@
             android:layout_weight="0.5"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="@dimen/all_rule_height"
-            android:layout_marginEnd="@dimen/all_edge_margin"
+            android:layout_marginEnd="@dimen/all_edge_padding"
             style="@style/App.ThemeOverlay.Rule" />
         <TextView
             android:text="@string/sso_hint"
@@ -29,7 +29,7 @@
             android:layout_weight="0.5"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="@dimen/all_rule_height"
-            android:layout_marginStart="@dimen/all_edge_margin"
+            android:layout_marginStart="@dimen/all_edge_padding"
             style="@style/App.ThemeOverlay.Rule" />
     </LinearLayout>
 
