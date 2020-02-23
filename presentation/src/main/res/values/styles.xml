@@ -122,13 +122,18 @@
     </style>
 
     <style name="App.Widget.DropdownMenu">
-        <item name="android:cursorVisible">false</item>
-        <item name="android:focusable">false</item>
+        <item name="android:paddingTop">@dimen/all_input_leading</item>
+        <item name="android:paddingBottom">@dimen/all_input_padding</item>
 
         <item name="android:textAppearance">@style/App.TextAppearance.Input</item>
+
+        <item name="android:cursorVisible">false</item>
+        <item name="android:focusable">false</item>
     </style>
 
     <style name="App.Widget.DropdownMenuLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="android:paddingBottom">@dimen/all_input_margin</item>
+
         <item name="boxBackgroundColor">@color/white</item>
         <item name="hintTextAppearance">@style/App.TextAppearance.Hint</item>
     </style>

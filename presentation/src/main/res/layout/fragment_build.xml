@@ -94,7 +94,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/build_section_margin"/>
 
-        <include layout="@layout/content_icon" />
+        <com.atlas.ride.presentation.widget.IconSelector
+            android:id="@+id/build_icon_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/build_generate_button"
