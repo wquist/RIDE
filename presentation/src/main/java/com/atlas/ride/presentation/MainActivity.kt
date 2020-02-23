@@ -26,9 +26,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(controller, configuration)
         main_drawer_view.setupWithNavController(controller)
 
-        // The initial fragment destination is not part of the drawer menu, so neither the hamburger
-        // or the back arrow should be displayed.
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        refreshHomeState()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -37,9 +35,15 @@ class MainActivity : AppCompatActivity() {
         // Like in [onCreate], the initial fragment must be handled specially (no navigation
         // button). Note that this must occur after the controller has navigated, such that
         // [currentDesination] will point to the correct view ID.
-        if (controller.currentDestination?.id == controller.graph.startDestination)
-            supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        refreshHomeState()
 
         return result
+    }
+
+    private fun refreshHomeState() {
+        // The initial fragment destination is not part of the drawer menu, so neither the hamburger
+        // or the back arrow should be displayed.
+        if (with(controller) { currentDestination?.id == graph.startDestination })
+            supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 }
