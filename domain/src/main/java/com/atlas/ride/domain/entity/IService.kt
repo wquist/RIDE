@@ -19,6 +19,4 @@ interface IService : IPrimitive, IResource {
 
     /** The service type affects how it is used/controlled during execution of an IoT app. */
     val type: Type
-    /** In addition to the resource icon, services also have unique background colors. */
-    val color: Int
 }
