@@ -17,6 +17,9 @@ interface IService : IPrimitive, IResource {
         CONDITION
     }
 
+    /** The thing that provides this service. */
+    val thing: IThing
+
     /** The service type affects how it is used/controlled during execution of an IoT app. */
     val type: Type
 }

@@ -24,6 +24,10 @@ interface IRelationship : IPrimitive, IResource {
         CONTEST
     }
 
+    /** The two services this relationship is between, with "trigger" controlling the execution. */
+    val trigger: IService
+    val action: IService
+
     /** The connection type determines how the action service is invoked in an IoT app. */
     val connection: Connection
 }
