@@ -18,6 +18,9 @@ interface IThing {
         WORKING
     }
 
+    /** A list of service objects belonging to this thing. */
+    val services: List<IService>
+
     /** A user-friendly label representing the thing as a whole. */
     val name: String
     /** A user-friendly description scraped from the IoT-DDL "short-description". */

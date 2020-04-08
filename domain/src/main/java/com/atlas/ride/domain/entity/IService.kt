@@ -11,15 +11,14 @@ interface IService : IPrimitive, IResource {
      * represents an actuator, and consumes a numeric value to perform its functionality. A
      * [CONDITION] service represents a special type of sensor, and returns a boolean value.
      */
-    enum class Type {
+    enum class Function {
         REPORT,
         ACTION,
         CONDITION
     }
 
     /** The thing that provides this service. */
-    val thing: IThing
-
+    val parent: IThing
     /** The service type affects how it is used/controlled during execution of an IoT app. */
-    val type: Type
+    val function: Function
 }

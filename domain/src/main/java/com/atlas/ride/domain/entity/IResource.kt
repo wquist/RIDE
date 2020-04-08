@@ -5,6 +5,9 @@ package com.atlas.ride.domain.entity
  * usable as an executable step within a recipe.
  */
 interface IResource {
+    /** A resource may be a service or relationship, but never a recipe. */
+    val type: IPrimitive.Type
+
     /** A resource icon is represented as a name, since it may be either an icon or a URL. */
     val icon: String
 }
