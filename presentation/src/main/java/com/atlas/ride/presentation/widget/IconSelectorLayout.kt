@@ -6,7 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 
 import com.atlas.ride.presentation.R
 
-class IconSelector @JvmOverloads constructor(
+class IconSelectorLayout @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0

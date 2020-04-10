@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/build_section_margin"/>
 
-        <com.atlas.ride.presentation.widget.IconSelector
+        <com.atlas.ride.presentation.widget.IconSelectorLayout
             android:id="@+id/build_icon_selector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
