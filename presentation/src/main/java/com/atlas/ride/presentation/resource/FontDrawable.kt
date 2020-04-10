@@ -11,7 +11,7 @@ import android.text.TextPaint
  */
 class FontDrawable(val typeface: Typeface) : Drawable() {
     /** The text to render. Should be a single Unicode escape sequence. */
-    var text: String = ""
+    var text = ""
         set(value) { field = value; invalidateSelf() }
     /** The size of the icon bounds, in pixels. */
     var size: Int
@@ -22,7 +22,7 @@ class FontDrawable(val typeface: Typeface) : Drawable() {
         get() = paint.color
         set(value) { paint.color = value; invalidateSelf() }
 
-    private val paint: TextPaint = TextPaint().apply {
+    private val paint = TextPaint().apply {
         typeface = this@FontDrawable.typeface
         textAlign = Paint.Align.CENTER
         color = Color.WHITE
