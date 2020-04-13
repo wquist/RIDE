@@ -3,4 +3,8 @@
     <attr name="sso_facebookAction" format="string" />
     <attr name="sso_googleAction" format="string" />
     <attr name="sso_twitterAction" format="string" />
+
+    <attr name="state_status_unknown" format="boolean" />
+    <attr name="state_status_problem" format="boolean" />
+    <attr name="state_status_working" format="boolean" />
 </resources>
