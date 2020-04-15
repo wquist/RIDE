@@ -29,7 +29,9 @@ class FontDrawable(val typeface: Typeface) : Drawable() {
         flags = Paint.ANTI_ALIAS_FLAG
     }
 
-    /** Draw the specified text. Strings with multiple characters may not render properly. */
+    /**
+     * Draw the specified text. Strings with multiple characters may not render properly.
+     */
     override fun draw(canvas: Canvas) {
         val textBounds = Rect()
         paint.getTextBounds(text, 0, 1, textBounds)
@@ -38,7 +40,9 @@ class FontDrawable(val typeface: Typeface) : Drawable() {
         canvas.drawText(text, bounds.width() / 2f, baseline, paint)
     }
 
-    /** The target text size must be updated when the drawable bounds are changed. */
+    /**
+     * The target text size must be updated when the drawable bounds are changed.
+     */
     override fun invalidateSelf() {
         super.invalidateSelf()
         paint.textSize = size.toFloat()

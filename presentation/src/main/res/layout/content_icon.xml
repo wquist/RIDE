@@ -49,13 +49,14 @@
     <ImageView
         android:id="@+id/icon_preview_view"
         android:contentDescription="@string/icon_accessibility"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="@dimen/icon_preview_padding"
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/icon_preview_text"
+        app:layout_constraintDimensionRatio="1:1"
         tools:src="@drawable/bg_icon" />
 
     <TextView

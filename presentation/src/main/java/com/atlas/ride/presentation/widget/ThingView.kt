@@ -22,11 +22,13 @@ class ThingView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : PrimitiveView(context, attrs, defStyle) {
-    // To prevent [icon] from being null, create an initial transparent value.
+    /** The center icon, initially transparent until set. */
     var icon: Drawable = ColorDrawable(0)
+    /** The color of the background circle. */
     var color: Int
         get() = colorPaint.color
         set(value) { colorPaint.color = value; invalidate() }
+    /** The thing status, which maps to the color of the small circle based on the state list. */
     var status = IThing.Status.UNKNOWN
         set(value) { field = value; invalidate() }
 
