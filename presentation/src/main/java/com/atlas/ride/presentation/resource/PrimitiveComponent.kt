@@ -19,10 +19,11 @@ open class PrimitiveComponent(var radius: Int, var minRadius: Int = 0) {
     fun draw(canvas: Canvas, icon: Drawable, background: Paint) {
         val r = max(radius, minRadius).toFloat()
         val iconSize = r * 2f / icon.bounds.height()
+        val iconCenter = iconSize * r
 
         with(canvas) {
             drawCircle(r, r, r, background)
-            withScale(iconSize * 0.6f, iconSize * 0.6f) {
+            withScale(iconSize * 0.6f, iconSize * 0.6f, iconCenter, iconCenter) {
                 icon.draw(this)
             }
         }
