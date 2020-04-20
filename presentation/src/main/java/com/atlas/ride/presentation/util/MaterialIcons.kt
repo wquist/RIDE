@@ -18,7 +18,7 @@ class MaterialIcons(context: Context) : IIconFont {
     private val mappings: Map<String, Char>
 
     init {
-        val map = context.resources.openRawResource(R.raw.material_codepoints)
+        val map = context.resources.openRawResource(R.raw.material_icons)
         mappings = map.bufferedReader().useLines {
             it.associate { line ->
                 // Each line in the codepoint definition file is formatted as follows:

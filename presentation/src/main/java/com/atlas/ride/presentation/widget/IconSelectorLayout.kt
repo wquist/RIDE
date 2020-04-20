@@ -31,13 +31,20 @@ class IconSelectorLayout @JvmOverloads constructor(
         /** The list of available color names. */
         val colorEntries: List<String>
 
-        /** Create a drawable based on the active icon image and color names. */
+        /**
+         * Provide a callback for when the adapter is first used within the layout.
+         */
+        fun onAttachedToIconSelectorLayout(layout: IconSelectorLayout) = Unit
+
+        /**
+         * Create a drawable based on the active icon image and color names.
+         */
         fun getPreview(image: String, color: String): Drawable
     }
 
     /** The active adapter. If null, the dropdowns will be empty and no icon will be displayed. */
     var adapter: Adapter? = null
-        set(value) { field = value; notifyDataSetChanged() }
+        set(value) { field = value; notifyAdapterChanged() }
 
     // Each dropdown must have its own adapter, which is created from the main one.
     private val imageAdapter = ArrayAdapter<String>(context, android.R.layout.select_dialog_item)
@@ -67,11 +74,12 @@ class IconSelectorLayout @JvmOverloads constructor(
     /**
      * The main adapter has changed, the dropdown data must be updated and the icon regenerated.
      */
-    private fun notifyDataSetChanged() {
+    private fun notifyAdapterChanged() {
         imageAdapter.clear()
         colorAdapter.clear()
 
         adapter?.let {
+            it.onAttachedToIconSelectorLayout(this)
             if (it.imageEntries.isEmpty() || it.colorEntries.isEmpty()) {
                 throw IllegalStateException(
                     "IconSelectorLayout adapter must have at least one color and image choice."
