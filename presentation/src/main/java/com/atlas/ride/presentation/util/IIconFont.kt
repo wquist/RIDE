@@ -6,7 +6,7 @@ import android.graphics.Typeface
  * The set of information needed to render icon from an icon font. This includes the typeface used,
  * as well as the names of available icons and their codepoint mappings.
  */
-interface IFontIcons {
+interface IIconFont {
     /** The icon font, pre-loaded from the resources file. */
     val typeface: Typeface
 

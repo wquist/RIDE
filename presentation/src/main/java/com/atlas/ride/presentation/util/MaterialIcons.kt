@@ -5,7 +5,7 @@ import android.graphics.Typeface
 
 import com.atlas.ride.presentation.R
 
-class MaterialIcons(context: Context) : IFontIcons {
+class MaterialIcons(context: Context) : IIconFont {
     override val typeface: Typeface = context.resources.getFont(R.font.material)
 
     override val names: List<String>
