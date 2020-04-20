@@ -129,6 +129,9 @@
 
         <item name="android:cursorVisible">false</item>
         <item name="android:focusable">false</item>
+
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="App.Widget.DropdownMenuLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
