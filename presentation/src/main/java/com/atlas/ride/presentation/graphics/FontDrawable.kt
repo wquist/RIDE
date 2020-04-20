@@ -43,9 +43,12 @@ class FontDrawable(val typeface: Typeface) : Drawable() {
     /**
      * The target text size must be updated when the drawable bounds are changed.
      */
-    override fun invalidateSelf() {
-        super.invalidateSelf()
-        paint.textSize = size.toFloat()
+    override fun onBoundsChange(bounds: Rect?) {
+        super.onBoundsChange(bounds)
+
+        bounds?.let {
+            paint.textSize = size.toFloat()
+        }
     }
 
     override fun setAlpha(alpha: Int) = throw UnsupportedOperationException(

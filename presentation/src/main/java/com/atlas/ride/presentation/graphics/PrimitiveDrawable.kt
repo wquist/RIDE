@@ -38,11 +38,20 @@ class PrimitiveDrawable(ic: Drawable) : Drawable() {
         super.onBoundsChange(bounds)
 
         bounds?.let {
-            icon.bounds = it
-
             val size = min(it.width(), it.height())
             component.radius = size / 2
+
+            invalidateSelf()
         }
+    }
+
+    /**
+     * The child drawables must be updated here, so that the bounds always match, even when a child
+     * element is first set.
+     */
+    override fun invalidateSelf() {
+        super.invalidateSelf()
+        icon.bounds = bounds
     }
 
     override fun setAlpha(alpha: Int) = throw UnsupportedOperationException(
