@@ -1,4 +1,4 @@
-package com.atlas.ride.presentation.util
+package com.atlas.ride.presentation.graphics
 
 import android.graphics.Color
 

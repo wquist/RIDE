@@ -11,7 +11,7 @@ import android.util.AttributeSet
 import kotlin.math.min
 
 import com.atlas.ride.domain.entity.IThing
-import com.atlas.ride.presentation.resource.ThingComponent
+import com.atlas.ride.presentation.graphics.ThingComponent
 
 /**
  * A view to display an iconic representation of a single [IThing] object. This draws the thing as

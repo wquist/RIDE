@@ -3,8 +3,10 @@ package com.atlas.ride.presentation.util
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 
-import com.atlas.ride.presentation.resource.FontDrawable
-import com.atlas.ride.presentation.resource.PrimitiveDrawable
+import com.atlas.ride.presentation.graphics.FontDrawable
+import com.atlas.ride.presentation.graphics.IIconFont
+import com.atlas.ride.presentation.graphics.IPalette
+import com.atlas.ride.presentation.graphics.PrimitiveDrawable
 import com.atlas.ride.presentation.widget.IconSelectorLayout
 
 class IconAdapter(

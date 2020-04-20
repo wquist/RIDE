@@ -1,4 +1,4 @@
-package com.atlas.ride.presentation.resource
+package com.atlas.ride.presentation.graphics
 
 import android.graphics.*
 import android.graphics.drawable.Drawable

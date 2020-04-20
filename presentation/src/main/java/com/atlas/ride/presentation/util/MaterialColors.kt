@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 
 import com.atlas.ride.presentation.R
+import com.atlas.ride.presentation.graphics.IPalette
 
 class MaterialColors(context: Context) : IPalette {
     override val names: List<String>
