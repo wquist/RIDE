@@ -1,0 +1,13 @@
+red #B71C1C
+pink #880E4F
+purple #4A148C
+indigo #1A237E
+blue #0D47A1
+cyan #006064
+teal #004D40
+green #1B5E20
+light_green #33691E
+orange #E65100
+deep_orange #BF360C
+brown #3E2723
+blue_grey #263238
