@@ -10,4 +10,6 @@ interface IResource {
 
     /** A resource icon is represented as a name, since it may be either an icon or a URL. */
     val icon: String
+    /** A resource usually inherits the color from its thing, or black if it is a relationship. */
+    val color: Int
 }
