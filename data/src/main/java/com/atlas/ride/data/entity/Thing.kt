@@ -16,7 +16,7 @@ data class Thing(
     @Embedded
     val fields: Fields,
 
-    @Relation(parentColumn = "id", entityColumn = "parentId")
+    @Relation(parentColumn = "thingId", entityColumn = "parentThingId")
     private val services: List<Service.Fields>? = null
 ) : IThing by fields {
     /**
@@ -26,7 +26,7 @@ data class Thing(
     @Entity(tableName = "Things")
     abstract class Fields(
         @PrimaryKey(autoGenerate = true)
-        val id: Int,
+        val thingId: Int,
 
         override val name: String,
         override val description: String,

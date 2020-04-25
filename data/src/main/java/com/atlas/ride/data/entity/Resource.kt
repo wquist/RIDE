@@ -21,7 +21,7 @@ data class Resource(
     @Entity(tableName = "Resources")
     abstract class Fields(
         @PrimaryKey(autoGenerate = true)
-        val id: Int,
+        val resourceId: Int,
 
         override val type: IPrimitive.Type,
 

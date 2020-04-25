@@ -18,10 +18,10 @@ data class Service(
     @Embedded
     val fields: Fields,
 
-    @Relation(parentColumn = "id", entityColumn = "id")
+    @Relation(parentColumn = "serviceId", entityColumn = "resourceId")
     val resource: Resource.Fields,
 
-    @Relation(parentColumn = "parentId", entityColumn = "id")
+    @Relation(parentColumn = "parentThingId", entityColumn = "thingId")
     private val parent: Thing.Fields? = null
 ) : IResource by resource, IService by fields {
     /**
@@ -32,14 +32,14 @@ data class Service(
     @Entity(tableName = "Services")
     abstract class Fields(
         @PrimaryKey(autoGenerate = false)
-        val id: Int,
+        val serviceId: Int,
 
         override val name: String,
         override val description: String,
 
         override val function: IService.Function,
 
-        val parentId: Int
+        val parentThingId: Int
     ) : IService
 
     override val type: IPrimitive.Type
