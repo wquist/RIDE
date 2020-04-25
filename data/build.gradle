@@ -21,7 +21,10 @@ android {
         consumerProguardFiles 'consumer-rules.pro'
 
         kapt {
-            arguments { arg("room.schemaLocation", "$projectDir/schemas".toString()) }
+            arguments {
+                arg("room.incremental", "true")
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
         }
     }
 
