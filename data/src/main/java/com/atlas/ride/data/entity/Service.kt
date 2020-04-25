@@ -1,26 +1,56 @@
 package com.atlas.ride.data.entity
 
+import androidx.room.Embedded
 import androidx.room.Entity
-import androidx.room.Ignore
+import androidx.room.PrimaryKey
+import androidx.room.Relation
 
 import com.atlas.ride.domain.entity.IPrimitive
 import com.atlas.ride.domain.entity.IResource
 import com.atlas.ride.domain.entity.IService
 
-@Entity(tableName = "Services")
+/**
+ * A complete representation of a service object. In addition to supported access of its parent
+ * information, this type also includes the fields from its associated resource object (its
+ * inherited type).
+ */
 data class Service(
-    val id: Int,
+    @Embedded
+    val fields: Fields,
 
-    override val name: String,
-    override val description: String,
+    @Relation(parentColumn = "id", entityColumn = "id")
+    val resource: Resource.Fields,
 
-    @Ignore
-    override val parent: Thing,
-    override val function: IService.Function,
+    @Relation(parentColumn = "parentId", entityColumn = "id")
+    private val parent: Thing.Fields? = null
+) : IResource by resource, IService by fields {
+    /**
+     * A partial representation of a service object, containing only the data fields specified
+     * in exactly [IService]. Note that this type must be accessed carefully, as although it
+     * represents a service, it contains no [IResource] fields on its own.
+     */
+    @Entity(tableName = "Services")
+    abstract class Fields(
+        @PrimaryKey(autoGenerate = false)
+        val id: Int,
 
-    @Ignore
-    private val resource: Resource
-) : IResource by resource, IService {
+        override val name: String,
+        override val description: String,
+
+        override val function: IService.Function,
+
+        val parentId: Int
+    ) : IService
+
     override val type: IPrimitive.Type
         get() = IPrimitive.Type.SERVICE
+
+    override val icon: String
+        get() = resource.icon
+    override val color: Int
+        get() = resource.color
+
+    override fun getParent() = parent ?: throw UnsupportedOperationException(
+        "This instance of IService does not contain a valid reference to its parent data."
+    )
 }

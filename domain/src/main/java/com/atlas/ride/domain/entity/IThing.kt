@@ -18,9 +18,6 @@ interface IThing {
         WORKING
     }
 
-    /** A list of service objects belonging to this thing. */
-    val services: List<IService>
-
     /** A user-friendly label representing the thing as a whole. */
     val name: String
     /** A user-friendly description scraped from the IoT-DDL "short-description". */
@@ -32,4 +29,10 @@ interface IThing {
     val color: Int
     /** A thing status must be updated based on its last known state. */
     val status: Status
+
+    /**
+     * Retrieve a list of service objects belonging to this thing. This function may throw an
+     * exception in cases where the service data is not available, such as a partial query.
+     */
+    fun getServices(): List<IService>
 }

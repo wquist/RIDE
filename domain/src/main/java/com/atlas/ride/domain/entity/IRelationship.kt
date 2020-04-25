@@ -27,7 +27,15 @@ interface IRelationship : IPrimitive, IResource {
     /** The connection type determines how the action service is invoked in an IoT app. */
     val connection: Connection
 
-    /** The two services this relationship is between, with "trigger" controlling the execution. */
-    val trigger: IService
-    val action: IService
+    /**
+     * The trigger service is always evaluated first, to determine whether the relationship
+     * interaction should continue. This funcion may throw an exception if the trigger information
+     * is not fully available, such as in a partial query.
+     */
+    fun getTrigger(): IService
+    /**
+     * The action service is always evaluated in response to the trigger. This funcion may
+     * throw an exception if the action info is not fully available, such as in a partial query.
+     */
+    fun getAction(): IService
 }

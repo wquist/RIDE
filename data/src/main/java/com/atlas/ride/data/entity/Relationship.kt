@@ -1,29 +1,39 @@
 package com.atlas.ride.data.entity
 
+import androidx.room.Embedded
 import androidx.room.Entity
-import androidx.room.Ignore
+import androidx.room.PrimaryKey
+import androidx.room.Relation
 
-import com.atlas.ride.domain.entity.IPrimitive
 import com.atlas.ride.domain.entity.IRelationship
-import com.atlas.ride.domain.entity.IResource
 
-@Entity(tableName = "Relationships")
 data class Relationship(
-    val id: Int,
+    @Embedded
+    val fields: Fields,
 
-    override val name: String,
-    override val description: String,
+    @Relation(parentColumn = "triggerId", entityColumn = "id")
+    private val trigger: Service.Fields? = null,
+    @Relation(parentColumn = "actionId", entityColumn = "id")
+    private val action: Service.Fields? = null
+) : IRelationship by fields {
+    @Entity(tableName = "Relationships")
+    abstract class Fields(
+        @PrimaryKey(autoGenerate = true)
+        val id: Int,
 
-    override val connection: IRelationship.Connection,
+        override val name: String,
+        override val description: String,
 
-    @Ignore
-    override val trigger: Service,
-    @Ignore
-    override val action: Service,
+        override val connection: IRelationship.Connection,
 
-    @Ignore
-    private val resource: Resource
-) : IResource by resource, IRelationship {
-    override val type: IPrimitive.Type
-        get() = IPrimitive.Type.RELATIONSHIP
+        val triggerId: Int,
+        val actionId: Int
+    ) : IRelationship
+
+    override fun getTrigger() = trigger ?: throw UnsupportedOperationException(
+        "This instance of IRelationship does not contain valid trigger service data."
+    )
+    override fun getAction() = action ?: throw UnsupportedOperationException(
+        "This instance of IRelationship does not contain valid action service data."
+    )
 }

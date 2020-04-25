@@ -17,8 +17,11 @@ interface IService : IPrimitive, IResource {
         CONDITION
     }
 
-    /** The thing that provides this service. */
-    val parent: IThing
     /** The service type affects how it is used/controlled during execution of an IoT app. */
     val function: Function
+
+    /** All services are owned by a parent thing. This function may throw an exception if the parent
+     * information is not available, such as from a partial query.
+     */
+    fun getParent(): IThing
 }

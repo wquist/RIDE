@@ -1,23 +1,26 @@
 package com.atlas.ride.data.entity
 
+import androidx.room.Embedded
 import androidx.room.Entity
-import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import androidx.room.Relation
 
-import com.atlas.ride.domain.entity.IPrimitive
 import com.atlas.ride.domain.entity.IRecipe
 
-@Entity(tableName = "Recipes")
 data class Recipe(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @Embedded
+    val fields: Fields
+) : IRecipe by fields {
+    @Entity(tableName = "Recipes")
+    abstract class Fields(
+        @PrimaryKey(autoGenerate = true)
+        val id: Int,
 
-    override val name: String,
-    override val description: String,
+        override val name: String,
+        override val description: String
+    ) : IRecipe
 
-    @Ignore
-    override val sequence: List<Resource>
-) : IRecipe {
-    override val type: IPrimitive.Type
-        get() = IPrimitive.Type.RECIPE
+    override fun getResources() = throw UnsupportedOperationException(
+        "This instance of IRecipe does not contain a valid set of resource data."
+    )
 }
