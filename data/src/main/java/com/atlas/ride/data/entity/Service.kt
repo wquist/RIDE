@@ -1,9 +1,6 @@
 package com.atlas.ride.data.entity
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import androidx.room.Relation
+import androidx.room.*
 
 import com.atlas.ride.domain.entity.IPrimitive
 import com.atlas.ride.domain.entity.IResource
@@ -29,7 +26,14 @@ data class Service(
      * in exactly [IService]. Note that this type must be accessed carefully, as although it
      * represents a service, it contains no [IResource] fields on its own.
      */
-    @Entity(tableName = "Services")
+    @Entity(tableName = "Services", foreignKeys = [
+        ForeignKey(
+            entity = Resource.Fields::class,
+            parentColumns = ["resourceId"],
+            childColumns = ["serviceId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ])
     abstract class Fields(
         @PrimaryKey(autoGenerate = false)
         val serviceId: Int,
