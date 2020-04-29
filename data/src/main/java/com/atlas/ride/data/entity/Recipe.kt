@@ -1,6 +1,7 @@
 package com.atlas.ride.data.entity
 
 import androidx.room.*
+import com.atlas.ride.domain.entity.IPrimitive
 
 import com.atlas.ride.domain.entity.IRecipe
 
@@ -16,13 +17,16 @@ data class Recipe(
     private val resources: List<Resource.Fields>? = null
 ) : IRecipe by fields {
     @Entity(tableName = "Recipes")
-    abstract class Fields(
+    class Fields(
         @PrimaryKey(autoGenerate = true)
         val recipeId: Int,
 
         override val name: String,
         override val description: String
     ) : IRecipe {
+        override val type: IPrimitive.Type
+            get() = IPrimitive.Type.RECIPE
+
         override fun getResources() = throw UnsupportedOperationException(
             "This instance of IRecipe does not contain a valid set of resource data."
         )

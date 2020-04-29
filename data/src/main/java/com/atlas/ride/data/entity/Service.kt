@@ -34,7 +34,7 @@ data class Service(
             onDelete = ForeignKey.CASCADE
         )
     ])
-    abstract class Fields(
+    class Fields(
         @PrimaryKey(autoGenerate = false)
         val serviceId: Int,
 
@@ -45,13 +45,25 @@ data class Service(
 
         val parentThingId: Int
     ) : IService {
+        override val type: IPrimitive.Type
+            get() = IPrimitive.Type.SERVICE
+
+        override val icon: String
+            get() = throw UnsupportedOperationException(
+                "This instance of IService does not contain a valid icon."
+            )
+        override val color: Int
+            get() = throw UnsupportedOperationException(
+                "This instance of IService does not contain a valid color."
+            )
+
         override fun getParent() = throw UnsupportedOperationException(
             "This instance of IService does not contain a valid reference to its parent data."
         )
     }
 
     override val type: IPrimitive.Type
-        get() = IPrimitive.Type.SERVICE
+        get() = fields.type
 
     override val icon: String
         get() = resource.icon

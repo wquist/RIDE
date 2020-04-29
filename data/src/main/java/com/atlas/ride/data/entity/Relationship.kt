@@ -35,7 +35,7 @@ data class Relationship(
             onDelete = ForeignKey.CASCADE
         )
     ])
-    abstract class Fields(
+    class Fields(
         // This field will always be set to the parent resourceId.
         @PrimaryKey(autoGenerate = true)
         val relationshipId: Int,
@@ -48,6 +48,18 @@ data class Relationship(
         val triggerServiceId: Int,
         val actionServiceId: Int
     ) : IRelationship {
+        override val type: IPrimitive.Type
+            get() = IPrimitive.Type.RELATIONSHIP
+
+        override val icon: String
+            get() = throw UnsupportedOperationException(
+                "This instance of IRelationship does not contain a valid icon."
+            )
+        override val color: Int
+            get() = throw UnsupportedOperationException(
+                "This instance of IRelationship does not contain a valid color."
+            )
+
         override fun getTrigger() = throw UnsupportedOperationException(
             "This instance of IRelationship does not contain valid trigger service data."
         )
@@ -57,7 +69,7 @@ data class Relationship(
     }
 
     override val type: IPrimitive.Type
-        get() = IPrimitive.Type.RELATIONSHIP
+        get() = fields.type
 
     override val icon: String
         get() = resource.icon

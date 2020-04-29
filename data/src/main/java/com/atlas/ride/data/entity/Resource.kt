@@ -19,7 +19,7 @@ data class Resource(
      * A representation of the concrete fields (which is all fields) of a resource object.
      */
     @Entity(tableName = "Resources")
-    abstract class Fields(
+    class Fields(
         @PrimaryKey(autoGenerate = true)
         val resourceId: Int,
 

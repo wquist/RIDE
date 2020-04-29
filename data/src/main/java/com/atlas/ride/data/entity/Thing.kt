@@ -24,7 +24,7 @@ data class Thing(
      * represented within a single database table.
      */
     @Entity(tableName = "Things")
-    abstract class Fields(
+    class Fields(
         @PrimaryKey(autoGenerate = true)
         val thingId: Int,
 
