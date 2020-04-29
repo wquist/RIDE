@@ -1,13 +1,17 @@
 package com.atlas.ride.data.entity
 
 import androidx.room.*
-import com.atlas.ride.domain.entity.IPrimitive
 
+import com.atlas.ride.domain.entity.IPrimitive
 import com.atlas.ride.domain.entity.IRecipe
 
+/**
+ * A complete representation of a recipe object. In addition to the internal fields, this also
+ * contains references to the list of owned resource objects.
+ */
 data class Recipe(
     @Embedded
-    val fields: Fields,
+    private val fields: Fields,
 
     @Relation(
         parentColumn = "recipeId",
@@ -16,6 +20,10 @@ data class Recipe(
     )
     private val resources: List<Resource.Fields>? = null
 ) : IRecipe by fields {
+    /**
+     * A partial representation of a recipe object. This contains only fields that are stored
+     * within the cells of the individual 'Recipes' database table.
+     */
     @Entity(tableName = "Recipes")
     class Fields(
         @PrimaryKey(autoGenerate = true)

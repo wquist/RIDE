@@ -13,7 +13,7 @@ import com.atlas.ride.domain.entity.IResource
  */
 data class Resource(
     @Embedded
-    val fields: Fields
+    private val fields: Fields
 ) : IResource by fields {
     /**
      * A representation of the concrete fields (which is all fields) of a resource object.

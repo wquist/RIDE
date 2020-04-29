@@ -13,14 +13,31 @@ import com.atlas.ride.domain.entity.IService
  */
 data class Service(
     @Embedded
-    val fields: Fields,
-
-    @Relation(parentColumn = "serviceId", entityColumn = "resourceId")
-    val resource: Resource.Fields,
+    val allFields: AllFields,
 
     @Relation(parentColumn = "parentThingId", entityColumn = "thingId")
     private val parent: Thing.Fields? = null
-) : IResource by resource, IService by fields {
+) : IService by allFields {
+    /**
+     * A partial representation of a service object, similar to [Fields] but also containing
+     * inherited data types (from the parent resource object).
+     */
+    class AllFields(
+        @Embedded
+        val fields: Fields,
+
+        @Relation(parentColumn = "serviceId", entityColumn = "resourceId")
+        val resource: Resource.Fields
+    ) : IResource by resource, IService by fields {
+        override val type: IPrimitive.Type
+            get() = fields.type
+
+        override val icon: String
+            get() = resource.icon
+        override val color: Int
+            get() = resource.color
+    }
+
     /**
      * A partial representation of a service object, containing only the data fields specified
      * in exactly [IService]. Note that this type must be accessed carefully, as although it
@@ -62,13 +79,5 @@ data class Service(
         )
     }
 
-    override val type: IPrimitive.Type
-        get() = fields.type
-
-    override val icon: String
-        get() = resource.icon
-    override val color: Int
-        get() = resource.color
-
-    override fun getParent() = parent ?: fields.getParent()
+    override fun getParent() = parent ?: allFields.getParent()
 }

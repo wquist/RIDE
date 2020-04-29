@@ -14,7 +14,7 @@ import com.atlas.ride.domain.entity.IThing
  */
 data class Thing(
     @Embedded
-    val fields: Fields,
+    private val fields: Fields,
 
     @Relation(parentColumn = "thingId", entityColumn = "parentThingId")
     private val services: List<Service.Fields>? = null

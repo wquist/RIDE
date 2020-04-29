@@ -12,16 +12,33 @@ import com.atlas.ride.domain.entity.IResource
  */
 data class Relationship(
     @Embedded
-    val fields: Fields,
-
-    @Relation(parentColumn = "relationshipId", entityColumn = "resourceId")
-    val resource: Resource.Fields,
+    private val allFields: AllFields,
 
     @Relation(parentColumn = "triggerServiceId", entityColumn = "serviceId")
     private val trigger: Service.Fields? = null,
     @Relation(parentColumn = "actionServiceId", entityColumn = "serviceId")
     private val action: Service.Fields? = null
-) : IResource by resource, IRelationship by fields {
+) : IRelationship by allFields {
+    /**
+     * A partial representation of a relationship object, similar to [Fields] but also containing
+     * inherited data types (from the parent resource object).
+     */
+    class AllFields(
+        @Embedded
+        private val fields: Fields,
+
+        @Relation(parentColumn = "relationshipId", entityColumn = "resourceId")
+        private val resource: Resource.Fields
+    ) : IResource by resource, IRelationship by fields {
+        override val type: IPrimitive.Type
+            get() = fields.type
+
+        override val icon: String
+            get() = resource.icon
+        override val color: Int
+            get() = resource.color
+    }
+
     /**
      * A partial representation of a relationship object, containing only the data fields specified
      * in exactly [IRelationship]. Note that this type must be accessed carefully, as although it
@@ -68,14 +85,6 @@ data class Relationship(
         )
     }
 
-    override val type: IPrimitive.Type
-        get() = fields.type
-
-    override val icon: String
-        get() = resource.icon
-    override val color: Int
-        get() = resource.color
-
-    override fun getTrigger() = trigger ?: fields.getTrigger()
-    override fun getAction() = action ?: fields.getAction()
+    override fun getTrigger() = trigger ?: allFields.getTrigger()
+    override fun getAction() = action ?: allFields.getAction()
 }
