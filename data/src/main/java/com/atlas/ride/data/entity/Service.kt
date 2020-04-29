@@ -44,7 +44,11 @@ data class Service(
         override val function: IService.Function,
 
         val parentThingId: Int
-    ) : IService
+    ) : IService {
+        override fun getParent() = throw UnsupportedOperationException(
+            "This instance of IService does not contain a valid reference to its parent data."
+        )
+    }
 
     override val type: IPrimitive.Type
         get() = IPrimitive.Type.SERVICE
@@ -54,7 +58,5 @@ data class Service(
     override val color: Int
         get() = resource.color
 
-    override fun getParent() = parent ?: throw UnsupportedOperationException(
-        "This instance of IService does not contain a valid reference to its parent data."
-    )
+    override fun getParent() = parent ?: fields.getParent()
 }

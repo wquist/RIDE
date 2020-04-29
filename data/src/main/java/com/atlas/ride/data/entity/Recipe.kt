@@ -22,9 +22,11 @@ data class Recipe(
 
         override val name: String,
         override val description: String
-    ) : IRecipe
+    ) : IRecipe {
+        override fun getResources() = throw UnsupportedOperationException(
+            "This instance of IRecipe does not contain a valid set of resource data."
+        )
+    }
 
-    override fun getResources() = resources ?: throw UnsupportedOperationException(
-        "This instance of IRecipe does not contain a valid set of resource data."
-    )
+    override fun getResources() = resources ?: fields.getResources()
 }

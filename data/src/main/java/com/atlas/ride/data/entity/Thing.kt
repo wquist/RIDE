@@ -35,9 +35,11 @@ data class Thing(
         override val color: Int,
 
         override val status: IThing.Status
-    ) : IThing
+    ) : IThing {
+        override fun getServices() = throw UnsupportedOperationException(
+            "This instance of IThing does not contain a valid set of service data."
+        )
+    }
 
-    override fun getServices() = services ?: throw UnsupportedOperationException(
-        "This instance of IThing does not contain a valid set of service data."
-    )
+    override fun getServices() = services ?: fields.getServices()
 }

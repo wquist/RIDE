@@ -47,7 +47,14 @@ data class Relationship(
 
         val triggerServiceId: Int,
         val actionServiceId: Int
-    ) : IRelationship
+    ) : IRelationship {
+        override fun getTrigger() = throw UnsupportedOperationException(
+            "This instance of IRelationship does not contain valid trigger service data."
+        )
+        override fun getAction() = throw UnsupportedOperationException(
+            "This instance of IRelationship does not contain valid action service data."
+        )
+    }
 
     override val type: IPrimitive.Type
         get() = IPrimitive.Type.RELATIONSHIP
@@ -57,10 +64,6 @@ data class Relationship(
     override val color: Int
         get() = resource.color
 
-    override fun getTrigger() = trigger ?: throw UnsupportedOperationException(
-        "This instance of IRelationship does not contain valid trigger service data."
-    )
-    override fun getAction() = action ?: throw UnsupportedOperationException(
-        "This instance of IRelationship does not contain valid action service data."
-    )
+    override fun getTrigger() = trigger ?: fields.getTrigger()
+    override fun getAction() = action ?: fields.getAction()
 }
