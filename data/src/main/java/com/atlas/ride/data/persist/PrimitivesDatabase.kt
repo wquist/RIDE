@@ -16,5 +16,6 @@ import com.atlas.ride.data.util.EntityConverters
     Service.Fields::class
 ])
 abstract class PrimitivesDatabase : RoomDatabase() {
-    //
+    abstract fun thingDao(): ThingDao
+    abstract fun recipeDao(): RecipeDao
 }
