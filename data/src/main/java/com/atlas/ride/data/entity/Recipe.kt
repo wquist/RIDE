@@ -16,7 +16,7 @@ data class Recipe(
     @Relation(
         parentColumn = "recipeId",
         entityColumn = "resourceId",
-        associateBy = Junction(RecipeResourceRef::class)
+        associateBy = Junction(ResourceRef::class)
     )
     private val resources: List<Resource.Fields>? = null
 ) : IRecipe by fields {
@@ -39,6 +39,37 @@ data class Recipe(
             "This instance of IRecipe does not contain a valid set of resource data."
         )
     }
+
+    /**
+     * An intermediate data type to represent the many-to-many relationship between recipes and
+     * their child resource objects.
+     */
+    @Entity(
+        tableName = "RecipeResources",
+        primaryKeys = ["recipeId", "resourceId"],
+        indices = [
+            Index("recipeId"),
+            Index("resourceId")
+        ],
+        foreignKeys = [
+            ForeignKey(
+                entity = Fields::class,
+                parentColumns = ["recipeId"],
+                childColumns = ["recipeId"],
+                onDelete = ForeignKey.CASCADE
+            ),
+            ForeignKey(
+                entity = Resource.Fields::class,
+                parentColumns = ["resourceId"],
+                childColumns = ["resourceId"],
+                onDelete = ForeignKey.CASCADE
+            )
+        ]
+    )
+    data class ResourceRef(
+        val recipeId: Int,
+        val resourceId: Int
+    )
 
     override fun getResources() = resources ?: fields.getResources()
 }
