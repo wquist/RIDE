@@ -13,7 +13,7 @@ import com.atlas.ride.domain.entity.IService
  */
 data class Service(
     @Embedded
-    val allFields: AllFields,
+    private val allFields: AllFields,
 
     @Relation(parentColumn = "parentThingId", entityColumn = "thingId")
     private val parent: Thing.Fields? = null
@@ -24,10 +24,10 @@ data class Service(
      */
     class AllFields(
         @Embedded
-        val fields: Fields,
+        private val fields: Fields,
 
         @Relation(parentColumn = "serviceId", entityColumn = "resourceId")
-        val resource: Resource.Fields
+        private val resource: Resource.Fields
     ) : IResource by resource, IService by fields {
         override val type: IPrimitive.Type
             get() = fields.type
