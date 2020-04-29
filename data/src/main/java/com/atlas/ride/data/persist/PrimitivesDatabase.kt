@@ -10,7 +10,7 @@ import com.atlas.ride.data.util.EntityConverters
 @TypeConverters(EntityConverters::class) @Database(version = 1, entities = [
     Thing.Fields::class,
     Recipe.Fields::class,
-    RecipeResourceRef::class,
+    Recipe.ResourceRef::class,
     Resource.Fields::class,
     Relationship.Fields::class,
     Service.Fields::class
@@ -18,4 +18,7 @@ import com.atlas.ride.data.util.EntityConverters
 abstract class PrimitivesDatabase : RoomDatabase() {
     abstract fun thingDao(): ThingDao
     abstract fun recipeDao(): RecipeDao
+    abstract fun resourceDao(): ResourceDao
+    abstract fun relationshipDao(): RelationshipDao
+    abstract fun serviceDao(): ServiceDao
 }
