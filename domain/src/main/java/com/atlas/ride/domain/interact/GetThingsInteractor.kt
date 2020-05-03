@@ -8,7 +8,7 @@ import com.atlas.ride.domain.repo.IThingsRepository
 import com.atlas.ride.domain.util.Lce
 
 class GetThingsInteractor(private val repo: IThingsRepository) : BaseInteractor<List<IThing>>() {
-    override suspend fun invoke(onChange: (Lce<List<IThing>>) -> Unit) {
+    override suspend operator fun invoke(onChange: (Lce<List<IThing>>) -> Unit) {
         onChange(Lce.Loading)
         repo.get()
             .catch { e ->
