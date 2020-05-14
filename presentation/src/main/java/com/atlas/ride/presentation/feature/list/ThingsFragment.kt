@@ -1,7 +1,7 @@
 package com.atlas.ride.presentation.feature.list
 
 import android.os.Bundle
-import android.view.*
+import android.view.View
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
