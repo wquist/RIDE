@@ -15,6 +15,7 @@
     <dimen name="all_input_spacing">1.17</dimen>
     <dimen name="all_input_padding">6dp</dimen>
     <dimen name="all_input_text">18sp</dimen>
+    <dimen name="all_item_padding">19dp</dimen>
     <dimen name="all_menu_height">50dp</dimen>
     <dimen name="all_menu_offset">-6dp</dimen>
     <dimen name="all_menu_text">18sp</dimen>
@@ -31,8 +32,9 @@
     <dimen name="icon_preview_padding">5dp</dimen>
 
     <dimen name="item_content_margin">7dp</dimen>
+    <dimen name="item_divider_offset">62dp</dimen>
     <dimen name="item_preview_margin">17dp</dimen>
-    <dimen name="item_preview_size">64dp</dimen>
+    <dimen name="item_preview_size">48dp</dimen>
 
     <dimen name="sso_button_margin">14dp</dimen>
     <dimen name="sso_rule_margin">36dp</dimen>
