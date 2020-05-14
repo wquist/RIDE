@@ -176,14 +176,4 @@
         <item name="boxBackgroundColor">@color/white</item>
         <item name="hintTextAppearance">@style/App.TextAppearance.Hint</item>
     </style>
-
-    <style name="App.Widget.TextView" parent="Widget.MaterialComponents.TextView" />
-
-    <style name="App.Widget.TextView.Item">
-        <item name="android:maxLines">2</item>
-    </style>
-
-    <style name="App.Widget.TextView.ItemHeader">
-        <item name="android:maxLines">1</item>
-    </style>
 </resources>
