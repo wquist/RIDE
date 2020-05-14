@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.widget.ArrayAdapter
 import androidx.constraintlayout.widget.ConstraintLayout
 
-import kotlinx.android.synthetic.main.content_icon.view.*
+import kotlinx.android.synthetic.main.content_iconselect.view.*
 
 import com.atlas.ride.presentation.R
 
@@ -51,7 +51,7 @@ class IconSelectorLayout @JvmOverloads constructor(
     private val colorAdapter = ArrayAdapter<String>(context, android.R.layout.select_dialog_item)
 
     init {
-        inflate(context, R.layout.content_icon, this)
+        inflate(context, R.layout.content_iconselect, this)
     }
 
     /**
