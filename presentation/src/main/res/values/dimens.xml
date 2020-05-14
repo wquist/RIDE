@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="all_body_text">16sp</dimen>
     <dimen name="all_button_padding">4dp</dimen>
     <dimen name="all_button_text">16sp</dimen>
     <dimen name="all_corner_size">2dp</dimen>
     <dimen name="all_drawer_height">40dp</dimen>
     <dimen name="all_edge_padding">16dp</dimen>
+    <dimen name="all_header_text">18sp</dimen>
     <dimen name="all_hint_text">14sp</dimen>
     <dimen name="all_icon_padding">-20dp</dimen>
     <dimen name="all_icon_size">20dp</dimen>
@@ -17,22 +19,20 @@
     <dimen name="all_menu_offset">-6dp</dimen>
     <dimen name="all_menu_text">18sp</dimen>
     <dimen name="all_rule_height">1dp</dimen>
+    <dimen name="all_section_margin">14dp</dimen>
     <dimen name="all_section_text">16sp</dimen>
 
-    <dimen name="authorize_button_margin">32dp</dimen>
-    <dimen name="authorize_field_margin">12dp</dimen>
+    <dimen name="login_button_margin">32dp</dimen>
+    <dimen name="login_input_margin">12dp</dimen>
 
-    <dimen name="build_section_margin">14dp</dimen>
     <dimen name="build_button_margin">24dp</dimen>
 
     <dimen name="icon_preview_margin">40dp</dimen>
     <dimen name="icon_preview_padding">5dp</dimen>
 
-    <dimen name="item_body_text">16sp</dimen>
-    <dimen name="item_header_text">18sp</dimen>
+    <dimen name="item_content_margin">7dp</dimen>
     <dimen name="item_preview_margin">17dp</dimen>
     <dimen name="item_preview_size">64dp</dimen>
-    <dimen name="item_text_margin">7dp</dimen>
 
     <dimen name="sso_button_margin">14dp</dimen>
     <dimen name="sso_rule_margin">36dp</dimen>

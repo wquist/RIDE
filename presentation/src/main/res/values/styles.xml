@@ -17,6 +17,8 @@
         <item name="actionBarTheme">@style/App.ThemeOverlay.ActionBar</item>
         <item name="actionOverflowMenuStyle">@style/App.Widget.PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/App.TextAppearance.Menu</item>
+
+        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="App.ThemeOverlay" />
@@ -43,10 +45,20 @@
 
     <style name="App.TextAppearance" />
 
+    <style name="App.TextAppearance.Body">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/all_body_text</item>
+    </style>
+
     <style name="App.TextAppearance.Label">
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/all_button_text</item>
+    </style>
+
+    <style name="App.TextAppearance.Header">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/all_header_text</item>
     </style>
 
     <style name="App.TextAppearance.Hint">
@@ -59,22 +71,6 @@
 
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/all_input_text</item>
-    </style>
-
-    <style name="App.TextAppearance.Item">
-        <item name="android:textColor">@color/gray</item>
-        <item name="android:textSize">@dimen/item_body_text</item>
-
-        <item name="android:maxLines">2</item>
-        <item name="android:ellipsize">end</item>
-    </style>
-
-    <style name="App.TextAppearance.ItemHeader">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">@dimen/item_header_text</item>
-
-        <item name="android:maxLines">1</item>
-        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="App.TextAppearance.Menu">
@@ -147,7 +143,6 @@
         <item name="android:focusable">false</item>
 
         <item name="android:maxLines">1</item>
-        <item name="android:ellipsize">end</item>
     </style>
 
     <style name="App.Widget.DropdownMenuLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
@@ -180,5 +175,15 @@
 
         <item name="boxBackgroundColor">@color/white</item>
         <item name="hintTextAppearance">@style/App.TextAppearance.Hint</item>
+    </style>
+
+    <style name="App.Widget.TextView" parent="Widget.MaterialComponents.TextView" />
+
+    <style name="App.Widget.TextView.Item">
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="App.Widget.TextView.ItemHeader">
+        <item name="android:maxLines">1</item>
     </style>
 </resources>
