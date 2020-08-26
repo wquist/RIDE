@@ -5,6 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import kotlinx.android.synthetic.main.fragment_things.*
+
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 import com.atlas.ride.domain.entity.IThing

@@ -1,13 +1,20 @@
 package com.atlas.ride.presentation.util
 
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
+import kotlinx.android.synthetic.main.item_header.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
+import com.atlas.ride.presentation.R
 
 /**
  * A specialized list adapter that allows "sectioned" lists to be managed. This handles the tracking
@@ -15,9 +22,9 @@ import kotlinx.coroutines.withContext
  * The template parameter specifies the type within a single "item" row, but the parent overrides
  * are in terms of the inner [GroupedListAdapter.Row] class.
  */
-abstract class GroupedListAdapter<T, H : RecyclerView.ViewHolder>(
+abstract class GroupedListAdapter<T>(
     diff: DiffUtil.ItemCallback<T>
-) : ListAdapter<GroupedListAdapter.Row<T>, H>(RowCallback<T>(diff)) {
+) : ListAdapter<GroupedListAdapter.Row<T>, GroupedListAdapter.ViewHolder>(RowCallback<T>(diff)) {
     /**
      * Distinguish the different types of rows within the grouped list. The parent adapter maintains
      * a list of this type.
@@ -33,6 +40,16 @@ abstract class GroupedListAdapter<T, H : RecyclerView.ViewHolder>(
         data class Header(val title: String) : Row<Nothing>()
         /** An item contains the data type specified as the template argument of the adapter. */
         data class Item<out T>(val data: T) : Row<T>()
+    }
+
+    /**
+     * The base grouped [RecyclerView.ViewHolder] used in this adapter. The header view holder will
+     * extend from this, and custom item view holders should as well.
+     */
+    open class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
+
+    private class HeaderViewHolder(view: View) : ViewHolder(view) {
+        val title: TextView = view.header_title_text
     }
 
     // Provide a custom [ItemCallback] to handle the initial layer wrapped over the list items. This
@@ -113,6 +130,28 @@ abstract class GroupedListAdapter<T, H : RecyclerView.ViewHolder>(
      */
     fun isHeaderPosition(position: Int): Boolean {
         return (getItem(position) is Row.Header)
+    }
+
+    /**
+     * Create a new header view holder. This method should be called inside [onCreateViewHolder]
+     * when [isHeaderViewType] is true.
+     */
+    fun createHeaderViewHolder(parent: ViewGroup): ViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+
+        val view = inflater.inflate(R.layout.item_header, parent, false)
+        return HeaderViewHolder(view)
+    }
+
+    /**
+     * Set up the title within a header view. This method should be called inside [onBindViewHolder]
+     * when [isHeaderPosition] is true.
+     */
+    fun bindHeaderViewHolder(holder: ViewHolder, position: Int) {
+        val header = getItem(position) as Row.Header
+        with (holder as HeaderViewHolder) {
+            title.text = header.title
+        }
     }
 
     /**
