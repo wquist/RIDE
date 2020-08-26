@@ -13,8 +13,7 @@ object Module {
         single<IThingsRepository> { ThingsRepository(get()) }
 
         single {
-            val name = "ride.db"
-            Room.databaseBuilder(get(), PrimitivesDatabase::class.java, name)
+            Room.databaseBuilder(get(), PrimitivesDatabase::class.java, "ride.db")
                 .createFromAsset("database/test.db")
                 .build()
         }
