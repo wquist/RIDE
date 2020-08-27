@@ -10,7 +10,6 @@
         android:id="@+id/things_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="@dimen/all_edge_padding"
         tools:listitem="@layout/item_thing" />
 
 </LinearLayout>
