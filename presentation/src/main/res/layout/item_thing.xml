@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/all_item_padding">
+    android:paddingVertical="@dimen/all_item_padding">
 
     <ImageView
         android:id="@+id/thing_preview_view"
@@ -41,14 +41,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/thing_name_text"
         tools:text="Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium dolorem" />
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="@dimen/all_rule_height"
-        android:layout_marginTop="@dimen/all_item_padding"
-        app:layout_constraintStart_toStartOf="@id/thing_description_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/thing_description_text"
-        style="@style/App.ThemeOverlay.Rule" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

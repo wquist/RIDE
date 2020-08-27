@@ -48,8 +48,15 @@ abstract class GroupedListAdapter<T>(
      */
     open class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
+    // Provide a default header view holder layout. This is the holder used with
+    // [createHeaderViewHolder] and [bindHeaderViewHolder]. The child class can override this
+    // behavior by creating another view holder and not using the above mentioned methods.
     private class HeaderViewHolder(view: View) : ViewHolder(view) {
         val title: TextView = view.header_title_text
+
+        init {
+            itemView.setTag(R.id.tag_hasSeparator, false)
+        }
     }
 
     // Provide a custom [ItemCallback] to handle the initial layer wrapped over the list items. This
