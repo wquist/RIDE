@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.fragment_build.*
 import org.koin.android.ext.android.get
 
 import com.atlas.ride.presentation.R
-import com.atlas.ride.presentation.util.IconAdapter
 
 class BuildFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, parent: ViewGroup?, state: Bundle?): View? {
@@ -20,7 +19,7 @@ class BuildFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = IconAdapter(get(), get())
-        build_icon_selector.adapter = adapter
+        val provider = IconProvider(get(), get())
+        build_icon_selector.provider = provider
     }
 }

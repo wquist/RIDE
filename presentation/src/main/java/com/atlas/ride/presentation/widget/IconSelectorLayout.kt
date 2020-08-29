@@ -21,30 +21,30 @@ class IconSelectorLayout @JvmOverloads constructor(
     defStyle: Int = 0
 ) : ConstraintLayout(context, attrs, defStyle) {
     /**
-     * The icon selector adapter provides the dropdown data and handles the [Drawable] generation.
-     * When either dropdown field is changed, the [getPreview] method is invoked with the current
-     * field values.
+     * The icon selector provider is the source of the dropdown data and handles the [Drawable]
+     * generation. When either dropdown field is changed, the [getIcon] method is invoked with
+     * the current field values.
      */
-    interface Adapter {
+    interface Provider {
         /** The list of available icon image names. */
-        val imageEntries: List<String>
+        val imageNames: List<String>
         /** The list of available color names. */
-        val colorEntries: List<String>
+        val colorNames: List<String>
 
         /**
-         * Provide a callback for when the adapter is first used within the layout.
+         * Invoke a callback when the provider is first used within the layout.
          */
         fun onAttachedToIconSelectorLayout(layout: IconSelectorLayout) = Unit
 
         /**
          * Create a drawable based on the active icon image and color names.
          */
-        fun getPreview(image: String, color: String): Drawable
+        fun getIcon(image: String, color: String): Drawable
     }
 
-    /** The active adapter. If null, the dropdowns will be empty and no icon will be displayed. */
-    var adapter: Adapter? = null
-        set(value) { field = value; notifyAdapterChanged() }
+    /** The active provider. If null, the dropdowns will be empty and no icon will be displayed. */
+    var provider: Provider? = null
+        set(value) { field = value; notifyProviderChanged() }
 
     // Each dropdown must have its own adapter, which is created from the main one.
     private val imageAdapter = ArrayAdapter<String>(context, android.R.layout.select_dialog_item)
@@ -74,23 +74,23 @@ class IconSelectorLayout @JvmOverloads constructor(
     /**
      * The main adapter has changed, the dropdown data must be updated and the icon regenerated.
      */
-    private fun notifyAdapterChanged() {
+    private fun notifyProviderChanged() {
         imageAdapter.clear()
         colorAdapter.clear()
 
-        adapter?.let {
+        provider?.let {
             it.onAttachedToIconSelectorLayout(this)
-            if (it.imageEntries.isEmpty() || it.colorEntries.isEmpty()) {
+            if (it.imageNames.isEmpty() || it.colorNames.isEmpty()) {
                 throw IllegalStateException(
                     "IconSelectorLayout adapter must have at least one color and image choice."
                 )
             }
 
-            imageAdapter.addAll(it.imageEntries)
-            colorAdapter.addAll(it.colorEntries)
+            imageAdapter.addAll(it.imageNames)
+            colorAdapter.addAll(it.colorNames)
 
-            icon_image_text.setText(it.imageEntries.first(), false)
-            icon_color_text.setText(it.colorEntries.first(), false)
+            icon_image_text.setText(it.imageNames.first(), false)
+            icon_color_text.setText(it.colorNames.first(), false)
             updatePreview()
         }
     }
@@ -102,8 +102,8 @@ class IconSelectorLayout @JvmOverloads constructor(
         val image = icon_image_text.text.toString()
         val color = icon_color_text.text.toString()
 
-        adapter?.let {
-            val preview = it.getPreview(image, color)
+        provider?.let {
+            val preview = it.getIcon(image, color)
             icon_preview_view.setImageDrawable(preview)
         }
     }
