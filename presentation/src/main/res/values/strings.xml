@@ -60,6 +60,7 @@
 
     <string name="sso_hint">OR</string>
 
+    <string name="things_accessibility">\'%1$s\' THING icon</string>
     <string name="things_title">THINGS</string>
     <string name="things_type">Type</string>
 

@@ -10,14 +10,14 @@
 
     <ImageView
         android:id="@+id/thing_preview_view"
-        android:contentDescription=""
         android:layout_width="0dp"
         android:layout_height="@dimen/things_preview_size"
         android:adjustViewBounds="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintDimensionRatio="1:1"
-        tools:src="@drawable/bg_icon" />
+        tools:src="@drawable/bg_icon"
+        tools:ignore="ContentDescription" /> <!-- [contentDescription] will be set dynamically. -->
 
     <TextView
         android:id="@+id/thing_name_text"

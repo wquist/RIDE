@@ -54,6 +54,9 @@ class ThingsAdapter(
             description.text = item.data.description
 
             preview.setImageDrawable(drawableFactory.createDrawable(item.data))
+
+            val desc = itemView.resources.getString(R.string.things_accessibility, item.data.icon)
+            preview.contentDescription = desc
         }
     }
 }
