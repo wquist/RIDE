@@ -8,7 +8,7 @@ import kotlin.math.min
 /**
  * A wrapper class to allow simple primitives to be rendered within image view, etc.
  */
-class PrimitiveDrawable(ic: Drawable) : Drawable() {
+open class PrimitiveDrawable(ic: Drawable) : Drawable() {
     /** The primitive icon (note that the color is not set). */
     var icon: Drawable = ic
         set(value) { field = value; invalidateSelf() }
@@ -17,8 +17,8 @@ class PrimitiveDrawable(ic: Drawable) : Drawable() {
         get() = paint.color
         set(value) { paint.color = value; invalidateSelf() }
 
-    private val component = PrimitiveComponent(0)
-    private val paint = Paint().apply {
+    protected open val component = PrimitiveComponent(0)
+    protected val paint = Paint().apply {
         color = Color.BLACK
         flags = Paint.ANTI_ALIAS_FLAG
     }

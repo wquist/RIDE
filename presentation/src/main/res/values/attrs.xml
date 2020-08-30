@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="thing_statusColor" format="color" />
+
     <attr name="sso_facebookAction" format="string" />
     <attr name="sso_googleAction" format="string" />
     <attr name="sso_twitterAction" format="string" />

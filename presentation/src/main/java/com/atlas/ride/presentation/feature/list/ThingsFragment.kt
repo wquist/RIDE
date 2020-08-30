@@ -5,23 +5,25 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import kotlinx.android.synthetic.main.fragment_things.*
+import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 import com.atlas.ride.domain.entity.IThing
 import com.atlas.ride.domain.util.Lce
 import com.atlas.ride.presentation.R
+import com.atlas.ride.presentation.graphics.ThingDrawable
 import com.atlas.ride.presentation.widget.SeparatorItemDecoration
 
 class ThingsFragment : BaseFragment(R.layout.fragment_things, R.menu.sort_things) {
     private val model: ThingsViewModel by viewModel()
-    private val adapter = ThingsAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val adapter = ThingsAdapter(ThingDrawable.Factory(requireContext(), get()))
         with (things_recycler_view) {
             layoutManager = LinearLayoutManager(context)
-            adapter = this@ThingsFragment.adapter
+            this.adapter = adapter
 
             addItemDecoration(SeparatorItemDecoration(context))
         }

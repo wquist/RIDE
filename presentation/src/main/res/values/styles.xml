@@ -14,6 +14,8 @@
         <item name="colorPrimaryDark">@color/blue_dark</item>
         <item name="colorOnSurface">@color/gray_dark</item>
 
+        <item name="thing_statusColor">@color/sl_status</item>
+
         <item name="actionBarTheme">@style/App.ThemeOverlay.ActionBar</item>
         <item name="actionOverflowMenuStyle">@style/App.Widget.PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/App.TextAppearance.Menu</item>
