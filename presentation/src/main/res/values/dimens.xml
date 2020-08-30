@@ -15,7 +15,7 @@
     <dimen name="all_input_spacing">1.17</dimen>
     <dimen name="all_input_padding">6dp</dimen>
     <dimen name="all_input_text">18sp</dimen>
-    <dimen name="all_item_padding">19dp</dimen>
+    <dimen name="all_item_padding">18dp</dimen>
     <dimen name="all_menu_height">50dp</dimen>
     <dimen name="all_menu_offset">-6dp</dimen>
     <dimen name="all_menu_text">18sp</dimen>
@@ -36,6 +36,8 @@
 
     <dimen name="things_preview_margin">16dp</dimen>
     <dimen name="things_preview_size">48dp</dimen>
+    <!-- This value equals [all_item_padding] + [thing_preview_margin] + [thing_preview_size]. -->
+    <dimen name="things_separator_margin">82dp</dimen>
 
     <dimen name="welcome_button_margin">22dp</dimen>
     <dimen name="welcome_splash_margin">50dp</dimen>

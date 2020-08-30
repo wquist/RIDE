@@ -19,13 +19,18 @@ class ThingsFragment : BaseFragment(R.layout.fragment_things, R.menu.sort_things
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val ctx = requireContext()
 
-        val adapter = ThingsAdapter(ThingDrawable.Factory(requireContext(), get()))
+        val adapter = ThingsAdapter(ThingDrawable.Factory(ctx, get()))
+        val padding = resources.getDimension(R.dimen.things_separator_margin)
+
         with (things_recycler_view) {
             layoutManager = LinearLayoutManager(context)
             this.adapter = adapter
 
-            addItemDecoration(SeparatorItemDecoration(context))
+            addItemDecoration(SeparatorItemDecoration(context).apply {
+                paddingLeft = padding.toInt()
+            })
         }
 
         model.state.observe(this) {
