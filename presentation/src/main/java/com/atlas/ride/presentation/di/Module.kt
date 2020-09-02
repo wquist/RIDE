@@ -3,6 +3,7 @@ package com.atlas.ride.presentation.di
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
+import com.atlas.ride.presentation.feature.details.ThingDetailsViewModel
 import com.atlas.ride.presentation.feature.list.ThingsViewModel
 import com.atlas.ride.presentation.graphics.IIconFont
 import com.atlas.ride.presentation.graphics.IPalette
@@ -15,5 +16,6 @@ object Module {
         single<IPalette> { MaterialColors(get()) }
 
         viewModel { ThingsViewModel(get()) }
+        viewModel { (id: Int) -> ThingDetailsViewModel(get(), id) }
     }
 }

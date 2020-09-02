@@ -8,7 +8,6 @@ import kotlinx.android.synthetic.main.fragment_things.*
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-import com.atlas.ride.domain.entity.IThing
 import com.atlas.ride.domain.util.Lce
 import com.atlas.ride.presentation.R
 import com.atlas.ride.presentation.graphics.ThingDrawable
