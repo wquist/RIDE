@@ -6,4 +6,5 @@ import com.atlas.ride.domain.entity.IThing
 
 interface IThingsRepository {
     fun get(): Flow<List<IThing>>
+    fun get(id: Int): Flow<IThing>
 }
