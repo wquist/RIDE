@@ -35,13 +35,7 @@ class ThingsFragment : BaseFragment(R.layout.fragment_things, R.menu.sort_things
 
         model.state.observe(this) {
             when (it) {
-                is Lce.Content -> adapter.submitList(it.data, { thing -> thing.status }) { status ->
-                    when (status) {
-                        IThing.Status.UNKNOWN -> "Offline"
-                        IThing.Status.PROBLEM -> "Partially Operational"
-                        IThing.Status.WORKING -> "Online"
-                    }
-                }
+                is Lce.Content -> adapter.submitList(it.data) { thing -> thing.status }
             }
         }
     }

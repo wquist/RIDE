@@ -15,7 +15,13 @@ interface IThing {
     enum class Status {
         UNKNOWN,
         PROBLEM,
-        WORKING
+        WORKING;
+
+        override fun toString() = when (this) {
+            UNKNOWN -> "Offline"
+            PROBLEM -> "Partially Operational"
+            WORKING -> "Online"
+        }
     }
 
     /** A user-friendly label representing the thing as a whole. */
