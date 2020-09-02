@@ -23,13 +23,20 @@
     <dimen name="all_section_margin">14dp</dimen>
     <dimen name="all_section_text">16sp</dimen>
 
-    <dimen name="login_button_margin">32dp</dimen>
-    <dimen name="login_input_margin">12dp</dimen>
+    <dimen name="details_body_margin">46dp</dimen>
+    <dimen name="details_thing_size">95dp</dimen>
+    <dimen name="details_header_padding">5dp</dimen>
+    <dimen name="details_header_text">29sp</dimen>
+    <dimen name="details_stats_margin">18dp</dimen>
+    <dimen name="details_stats_padding">3dp</dimen>
 
     <dimen name="build_button_margin">24dp</dimen>
 
     <dimen name="icon_preview_margin">40dp</dimen>
     <dimen name="icon_preview_padding">5dp</dimen>
+
+    <dimen name="login_button_margin">32dp</dimen>
+    <dimen name="login_input_margin">12dp</dimen>
 
     <dimen name="sso_button_margin">14dp</dimen>
     <dimen name="sso_rule_margin">36dp</dimen>

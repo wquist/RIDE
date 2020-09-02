@@ -72,7 +72,20 @@
         android:id="@+id/things_fragment"
         android:name="com.atlas.ride.presentation.feature.list.ThingsFragment"
         android:label="@string/things_title"
-        tools:layout="@layout/fragment_things" />
+        tools:layout="@layout/fragment_things">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/things_to_thingdetails_action"
+            app:destination="@id/thingdetails_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/thingdetails_fragment"
+        android:name="com.atlas.ride.presentation.feature.details.ThingDetailsFragment"
+        android:label="@string/thingdetails_title"
+        tools:layout="@layout/fragment_thingdetails" />
 
     <fragment
         android:id="@+id/toolbox_fragment"
